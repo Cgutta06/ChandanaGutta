@@ -31,11 +31,27 @@ jobs:
         
       - name: Build project
         run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /ChandanaGutta
+
+      - name: List output directory
+        run: ls -la
         
+      - name: List out directory
+        run: |
+          if [ -d "out" ]; then
+            echo "Contents of out directory:"
+            ls -la out/
+          else
+            echo "out directory does not exist"
+            echo "Contents of current directory:"
+            ls -la
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: out
 
   deploy:
     environment:

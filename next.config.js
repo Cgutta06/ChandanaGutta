@@ -7,3 +7,5 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/ChandanaGutta' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/ChandanaGutta/' : '',
 }
+
+module.exports = nextConfig

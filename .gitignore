@@ -1,5 +1,5 @@
 # dependencies
-node_modules
+/node_modules
 /.pnp
 .pnp.js
 
@@ -16,10 +16,7 @@ node_modules
 # misc
 .DS_Store
 *.pem
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+Thumbs.db
 
 # debug
 npm-debug.log*
@@ -29,13 +26,17 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
 # IDE
-.idea
-.vscode
+.idea/
+.vscode/
+
+# Executables and system files
+*.exe
+*.dll
+*.pak
+*.dat
+*.bin
+/locales/
+/resources/
+/squirrel.exe
+/Squirrel-UpdateSelf.log
