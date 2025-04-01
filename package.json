@@ -2,12 +2,16 @@
   "name": "chandana-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://cgutta06.github.io/ChandanaGutta/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cgutta06/ChandanaGutta.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "14.0.4",

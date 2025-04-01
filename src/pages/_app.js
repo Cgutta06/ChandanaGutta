@@ -19,6 +19,27 @@ function MyApp({ Component, pageProps, router }) {
     };
   }, [router.events]);
 
+  // Handle GitHub Pages path issues
+  useEffect(() => {
+    // Check if we're on GitHub Pages
+    const isGitHubPages = typeof window !== 'undefined' && 
+                          window.location.hostname.includes('github.io');
+    
+    if (isGitHubPages) {
+      // Get the repository name (must match exactly)
+      const repoName = 'ChandanaGutta';
+      
+      // Get the current path
+      const path = window.location.pathname;
+      
+      // If we're at the root of the GitHub Pages site but not at the correct base path
+      if (path === '/' || (path === `/${repoName}` && !path.endsWith('/'))) {
+        // Redirect to the correct path with trailing slash
+        window.location.replace(`/${repoName}/`);
+      }
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -31,7 +52,7 @@ function MyApp({ Component, pageProps, router }) {
         <meta property="og:title" content="Chandana Gutta | Facilities Project Manager | Architect" />
         <meta property="og:description" content="Portfolio of Chandana Gutta - Facilities Project Manager, Building Envelope Commissioner, and Architect." />
         <meta property="og:image" content="/images/og-image.jpg" />
-        <meta property="og:url" content="https://chandanagutta.github.io" />
+        <meta property="og:url" content="https://cgutta06.github.io/ChandanaGutta/" />
         <meta property="og:type" content="website" />
         
         {/* Twitter Meta Tags */}
@@ -42,6 +63,9 @@ function MyApp({ Component, pageProps, router }) {
         
         {/* Theme Color for Browser */}
         <meta name="theme-color" content="#1E3A8A" />
+        
+        {/* GitHub Pages Base Path */}
+        <base href={process.env.NODE_ENV === 'production' ? '/ChandanaGutta/' : '/'} />
         
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

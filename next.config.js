@@ -1,19 +1,29 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === 'production';
+const repositoryName = 'ChandanaGutta';
+
 const nextConfig = {
   reactStrictMode: true,
+  
+  // Static HTML export
+  output: 'export',
+  
+  // Disable image optimization for static export
   images: {
     unoptimized: true,
   },
-  output: 'export',
   
-  // The trailing slash is important for GitHub Pages
+  // Required for GitHub Pages
   trailingSlash: true,
   
-  // Only use these in production, and make sure they match your repo name exactly
-  ...(process.env.NODE_ENV === 'production' ? {
-    assetPrefix: '/ChandanaGutta/',
-    basePath: '/ChandanaGutta',
-  } : {}),
+  // GitHub Pages path prefix - critical for assets to load correctly
+  basePath: isProduction ? `/${repositoryName}` : '',
+  assetPrefix: isProduction ? `/${repositoryName}/` : '',
+  
+  // Ensure ESLint is only run during development
+  eslint: {
+    ignoreDuringBuilds: isProduction,
+  },
 }
 
 module.exports = nextConfig

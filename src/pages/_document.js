@@ -1,18 +1,49 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      <body className="bg-gray-50">
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
+  render() {
+    // Determine if we're in a production environment
+    const isProduction = process.env.NODE_ENV === 'production';
+    const basePath = isProduction ? '/ChandanaGutta' : '';
+    
+    return (
+      <Html lang="en">
+        <Head>
+          {/* GitHub Pages specific script */}
+          {isProduction && (
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (function() {
+                    const isGitHubPages = window.location.hostname.includes('github.io');
+                    if (isGitHubPages) {
+                      // Check if URL path needs correction
+                      const path = window.location.pathname;
+                      const repoName = 'ChandanaGutta';
+                      
+                      // If at root or incorrect path, redirect
+                      if (path === '/' || (path === '/${repoName}' && !path.endsWith('/'))) {
+                        window.location.replace('/${repoName}/');
+                      }
+                    }
+                  })();
+                `,
+              }}
+            />
+          )}
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
+
+export default MyDocument;

@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 
 export default function Custom404() {
+  const router = useRouter();
+
+  // Handle client-side routing for SPA
+  useEffect(() => {
+    // If we're on GitHub Pages and this is a direct hit to a non-root URL,
+    // we need to redirect to the correct base path
+    if (typeof window !== 'undefined') {
+      const isGitHubPages = window.location.hostname.includes('github.io');
+      const isDirectAccess = document.referrer === '';
+      const path = window.location.pathname;
+      const repoName = 'ChandanaGutta';
+      
+      if (isGitHubPages && isDirectAccess && !path.includes(`/${repoName}`)) {
+        // Redirect to the correct base path
+        window.location.href = `/${repoName}${path}`;
+      }
+    }
+  }, []);
+
   return (
     <>
       <Head>
