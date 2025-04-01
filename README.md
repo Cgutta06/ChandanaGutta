@@ -19,6 +19,7 @@ Visit the live portfolio site at: [https://cgutta06.github.io/ChandanaGutta/](ht
 - [Deployment](#deployment)
 - [GitHub Pages Configuration](#github-pages-configuration)
 - [Troubleshooting](#troubleshooting)
+- [Recent Updates](#recent-updates)
 - [Key Features](#key-features)
 
 ## 📝 Project Overview
@@ -34,11 +35,12 @@ This portfolio website showcases Chandana Gutta's professional experience, proje
 
 ## 🔧 Technologies Used
 
-- **Next.js** - React framework for production
+- **Next.js 14** - React framework for production with static export
 - **Tailwind CSS** - Utility-first CSS framework
 - **Framer Motion** - Animation library
 - **Hero Icons** - SVG icon set
 - **GitHub Pages** - Hosting platform
+- **GitHub Actions** - CI/CD for automated deployment
 
 ## 📂 Project Structure
 
@@ -48,7 +50,9 @@ chandanagutta/
 │   └── workflows/      # GitHub Actions workflows
 ├── public/             # Static assets
 │   ├── images/         # Image assets
-│   └── .nojekyll       # Disables Jekyll processing
+│   ├── .nojekyll       # Disables Jekyll processing
+│   ├── fix-paths.js    # Client-side path fixing
+│   └── error-handler.js # Client-side error handling
 ├── src/                # Source code
 │   ├── components/     # React components
 │   │   ├── 3d/         # 3D elements
@@ -64,11 +68,14 @@ chandanagutta/
 │   │   ├── 404.js
 │   │   ├── _app.js
 │   │   └── _document.js
+│   ├── utils/          # Utility functions
+│   │   └── path-utils.js # Path handling utilities
 │   └── styles/         # CSS styles
 │       └── globals.css
 ├── .nojekyll           # Disables Jekyll processing
 ├── next.config.js      # Next.js configuration
 ├── package.json        # Project dependencies
+├── copy-pdf.js         # PDF copying script
 ├── postcss.config.js   # PostCSS configuration
 └── tailwind.config.js  # Tailwind configuration
 ```
@@ -77,7 +84,7 @@ chandanagutta/
 
 ### Prerequisites
 
-- Node.js (v14 or later)
+- Node.js (v16 or later)
 - npm or yarn
 - Git
 
@@ -112,34 +119,31 @@ Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## 🖼️ Required Images
 
-Before deploying, make sure to add the following images to your project:
+The following images are used in the project and should be available in the `public/images/` directory:
 
 ### Profile/Personal Images
-- `public/images/profile.jpg` - Your professional headshot (600×600px)
-- `public/images/og-image.jpg` - Social media preview image (1200×630px)
+- `profile.jpg` - Professional headshot
+- `og-image.jpg` - Social media preview image
 
 ### Background Images
-- `public/images/hero-bg.jpg` - Homepage hero background (1920×1080px)
-- `public/images/portfolio-bg.jpg` - Portfolio page header background (1920×1080px)
-- `public/images/experience-bg.jpg` - Experience page header background (1920×1080px)
-- `public/images/contact-bg.jpg` - Contact page header background (1920×1080px)
-- `public/images/contact-image.jpg` - Image for contact information panel (800×400px)
+- `hero-bg.jpg` - Homepage hero background
+- `portfolio-bg.jpg` - Portfolio page header background
+- `experience-bg.jpg` - Experience page header background
+- `contact-bg.jpg` - Contact page header background
 
 ### Project Images
-- `public/images/stonebridge.jpg` - Stonebridge Condominium project (800×600px)
-- `public/images/cashelmara.jpg` - Cashelmara Condominium project (800×600px)
-- `public/images/parkbuilding.jpg` - Park Building project (800×600px)
-- `public/images/residential-projects.jpg` - Two-story residential projects (800×600px)
-- `public/images/high-rise.jpg` - 20-story residential tower (800×600px)
+- `stonebridge.jpg` - Stonebridge Condominium project
+- `cashelmara.jpg` - Cashelmara Condominium project
+- `parkbuilding.jpg` - Park Building project
 
 ### Logo Images
-- `public/images/ecs-logo.png` - ECS Midwest LLC logo (200×200px)
-- `public/images/bgsu-logo.png` - Bowling Green State University logo (200×200px)
-- `public/images/reva-logo.png` - Reva University logo (200×200px)
-- `public/images/an-logo.png` - AN Architecture logo (200×200px)
+- `ecs-logo.png` - ECS Midwest LLC logo
+- `bgsu-logo.png` - Bowling Green State University logo
+- `reva-logo.png` - Reva University logo
+- `an-logo.png` - AN Architecture logo
 
 ### Resume File
-- `public/ChandanaGutta_Resume.pdf` - Your resume in PDF format
+- `ChandanaGutta_Resume.pdf` - Resume in PDF format (place in the public directory)
 
 ## 🔄 Development Workflow
 
@@ -180,80 +184,72 @@ git push origin main
    - Deploy to the `gh-pages` branch
    - Make the site available at your GitHub Pages URL
 
-### Manual Deployment
+### Manual Build for Testing
 
-If needed, you can deploy manually:
+If you want to test the build locally before pushing:
 
 ```bash
 # Build the project
 npm run build
 
-# Deploy to GitHub Pages
-# Option 1: If you have the gh-pages npm package installed
-npx gh-pages -d out
-
-# Option 2: Using git commands
-git add -f out/
-git commit -m "Deploy to GitHub pages"
-git subtree push --prefix out origin gh-pages
+# The static export will be in the 'out' directory
+# You can serve it locally with a static server
+npx serve out
 ```
 
 ## ⚙️ GitHub Pages Configuration
 
-After deployment, configure GitHub Pages in your repository:
+After deployment, ensure GitHub Pages is configured correctly:
 
 1. Go to your GitHub repository
 2. Click on "Settings"
 3. Navigate to "Pages" in the sidebar
 4. Under "Build and deployment":
-   - Source: "Deploy from a branch"
-   - Branch: "gh-pages"
-   - Folder: "/ (root)"
-5. Click "Save"
-6. Check the URL shown at the top of the page
+   - Source: "GitHub Actions"
+5. The site will be available at `https://cgutta06.github.io/ChandanaGutta/`
 
 ## 🔍 Troubleshooting
 
 ### Common Issues and Solutions
 
-#### 404 Error on GitHub Pages
+#### Images or Assets Not Loading
 
-If you get a 404 error when visiting your GitHub Pages site:
+If images or assets (like the resume PDF) don't load correctly:
 
-1. **Check Path Settings**
-   - Ensure `next.config.js` has correct `basePath` and `assetPrefix` settings
-   - Make sure the GitHub Pages branch (gh-pages) has a `.nojekyll` file
+1. **Check Path Configuration**
+   - Ensure paths in components use the `getImagePath` utility for static assets
+   - For links that Next.js handles (like navigation), use regular paths without the utility
 
-2. **Verify GitHub Pages Settings**
-   - Confirm Settings > Pages is using the gh-pages branch
-   - Wait a few minutes for changes to propagate
+2. **Resume PDF Issues**
+   - Make sure the PDF path includes the repository name in production:
+   - Use `/ChandanaGutta/ChandanaGutta_Resume.pdf` for direct links
+   - Ensure the PDF is copied to both the root and the repository subdirectory
 
-3. **Check for Build Errors**
-   - Review GitHub Actions logs for build errors
-   - Fix any errors and redeploy
+3. **404 Console Errors**
+   - Check that image paths reference files that actually exist in the public directory
+   - The fix-paths.js script should intercept and handle most 404 errors for JSON data files
 
-#### Images Not Loading
+#### Navigation Issues
 
-If images don't appear on the deployed site:
+If clicking navigation links causes 404 errors or double path issues:
 
-1. **Check Image Paths**
-   - Ensure all image paths start with a forward slash (`/images/...`)
-   - When using dynamic paths, include the base path
+1. **Check Path Configuration**
+   - Navigation links should use direct paths like `/portfolio` (not `/ChandanaGutta/portfolio`)
+   - Next.js will automatically add the base path in production
 
-2. **Image Formats**
-   - Use web-friendly formats (JPG, PNG, WebP)
-   - Optimize images for web to reduce file size
+2. **Browser Console Errors**
+   - Check the browser console for any path-related errors
+   - The fix-paths.js script should handle and correct most path issues automatically
 
-#### JavaScript Errors
+## 🆕 Recent Updates
 
-If interactive elements don't work:
-
-1. **Check Browser Console**
-   - Open browser developer tools to check for JavaScript errors
-   - Fix any path-related errors in components
-
-2. **Base Path Issues**
-   - Make sure all internal links include the base path for GitHub Pages
+### April 2025 Updates
+- Added path utility functions to handle GitHub Pages deployment paths
+- Fixed issues with PDF accessibility through proper path handling
+- Implemented client-side scripts to intercept and fix 404 errors
+- Updated build process to ensure PDF availability in all required locations
+- Improved overall GitHub Pages compatibility
+- Fixed missing image references in portfolio projects
 
 ## ✨ Key Features
 
