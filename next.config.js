@@ -19,11 +19,6 @@ const nextConfig = {
   // GitHub Pages path prefix - critical for assets to load correctly
   basePath: isProduction ? `/${repositoryName}` : '',
   assetPrefix: isProduction ? `/${repositoryName}/` : '',
-  
-  // Ensure ESLint is only run during development
-  eslint: {
-    ignoreDuringBuilds: isProduction,
-  },
 }
 
 module.exports = nextConfig

@@ -9,8 +9,8 @@
       // If we're on GitHub Pages and accessing the root, redirect to the correct path
       if (window.location.hostname.includes('github.io')) {
         var pathname = window.location.pathname;
-        // Check if we're at the repository root
-        if (pathname === '/' || pathname === '/ChandanaGutta/') {
+        // Check if we're at the repository root but not already at the correct path
+        if (pathname === '/' || (pathname === '/ChandanaGutta' && !pathname.endsWith('/'))) {
           window.location.href = '/ChandanaGutta/';
         }
       }

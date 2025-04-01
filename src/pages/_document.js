@@ -14,6 +14,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {isProduction && <base href="/ChandanaGutta/" />}
+          
           {/* GitHub Pages specific script */}
           {isProduction && (
             <script
@@ -27,8 +29,8 @@ class MyDocument extends Document {
                       const repoName = 'ChandanaGutta';
                       
                       // If at root or incorrect path, redirect
-                      if (path === '/' || (path === '/${repoName}' && !path.endsWith('/'))) {
-                        window.location.replace('/${repoName}/');
+                      if (path === '/' || (path === '/' + repoName && !path.endsWith('/'))) {
+                        window.location.replace('/' + repoName + '/');
                       }
                     }
                   })();

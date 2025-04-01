@@ -17,9 +17,9 @@ export default function Custom404() {
       const path = window.location.pathname;
       const repoName = 'ChandanaGutta';
       
-      if (isGitHubPages && isDirectAccess && !path.includes(`/${repoName}`)) {
+      if (isGitHubPages && isDirectAccess && !path.includes('/' + repoName)) {
         // Redirect to the correct base path
-        window.location.href = `/${repoName}${path}`;
+        window.location.href = '/' + repoName + path;
       }
     }
   }, []);

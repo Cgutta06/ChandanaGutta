@@ -17,8 +17,6 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-        with:
-          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -28,35 +26,15 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        
-      - name: Debug project config
-        run: cat next.config.js
 
       - name: Build
-        run: |
-          npm run build
-          ls -la out/
-          
-      - name: Prepare for deployment
-        run: |
-          # Create .nojekyll file (important!)
-          touch out/.nojekyll
-          # Copy index.html to 404.html for SPA routing
-          cp out/index.html out/404.html
-          # Ensure all files are readable
-          chmod -R +r out
-          
-      - name: Debug deployment files
-        run: |
-          ls -la out/
-          find out -type f -name "*.html" | head -n 5
-          
+        run: npm run build
+      
+      - name: Add .nojekyll file
+        run: touch out/.nojekyll
+        
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           folder: out
-          branch: gh-pages
           clean: true
-          clean-exclude: |
-            .nojekyll

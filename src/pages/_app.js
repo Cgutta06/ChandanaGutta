@@ -33,9 +33,9 @@ function MyApp({ Component, pageProps, router }) {
       const path = window.location.pathname;
       
       // If we're at the root of the GitHub Pages site but not at the correct base path
-      if (path === '/' || (path === `/${repoName}` && !path.endsWith('/'))) {
+      if (path === '/' || (path === '/' + repoName && !path.endsWith('/'))) {
         // Redirect to the correct path with trailing slash
-        window.location.replace(`/${repoName}/`);
+        window.location.replace('/' + repoName + '/');
       }
     }
   }, []);
@@ -63,9 +63,6 @@ function MyApp({ Component, pageProps, router }) {
         
         {/* Theme Color for Browser */}
         <meta name="theme-color" content="#1E3A8A" />
-        
-        {/* GitHub Pages Base Path */}
-        <base href={process.env.NODE_ENV === 'production' ? '/ChandanaGutta/' : '/'} />
         
         {/* Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
