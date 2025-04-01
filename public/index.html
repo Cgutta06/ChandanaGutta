@@ -4,19 +4,23 @@
   <meta charset="utf-8">
   <title>Chandana Gutta | Redirecting...</title>
   <script type="text/javascript">
-    // Handle GitHub Pages redirect
+    // Handle GitHub Pages redirect for index.html itself
     (function() {
-      // If we're on GitHub Pages and accessing the root, redirect to the correct path
+      // Only redirect if we're on GitHub Pages
       if (window.location.hostname.includes('github.io')) {
         var pathname = window.location.pathname;
-        // Check if we're at the repository root but not already at the correct path
-        if (pathname === '/' || (pathname === '/ChandanaGutta' && !pathname.endsWith('/'))) {
-          window.location.href = '/ChandanaGutta/';
+        // Check if we're at the index.html page specifically and redirect to the trailing slash version
+        if (pathname.endsWith('/index.html')) {
+          window.location.replace(pathname.substring(0, pathname.length - 10) + '/');
+          return;
+        }
+        // Handle root paths
+        if (pathname === '/' || pathname === '/ChandanaGutta' || pathname === '/ChandanaGutta/index.html') {
+          window.location.replace('/ChandanaGutta/');
         }
       }
     })();
   </script>
-  <meta http-equiv="refresh" content="0;URL='/ChandanaGutta/'">
 </head>
 <body>
   <p>If you are not redirected automatically, follow this <a href="/ChandanaGutta/">link to the homepage</a>.</p>
