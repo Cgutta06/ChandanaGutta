@@ -19,26 +19,7 @@ function MyApp({ Component, pageProps, router }) {
     };
   }, [router.events]);
 
-  // Handle GitHub Pages path issues
-  useEffect(() => {
-    // Check if we're on GitHub Pages
-    const isGitHubPages = typeof window !== 'undefined' && 
-                          window.location.hostname.includes('github.io');
-    
-    if (isGitHubPages) {
-      // Get the repository name (must match exactly)
-      const repoName = 'ChandanaGutta';
-      
-      // Get the current path
-      const path = window.location.pathname;
-      
-      // If we're at the root of the GitHub Pages site but not at the correct base path
-      if (path === '/' || (path === '/' + repoName && !path.endsWith('/'))) {
-        // Redirect to the correct path with trailing slash
-        window.location.replace('/' + repoName + '/');
-      }
-    }
-  }, []);
+  // No redirect needed here - handled by Next.js basePath config and static files
 
   return (
     <>
