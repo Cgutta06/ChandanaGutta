@@ -15,6 +15,9 @@ class MyDocument extends Document {
           
           {/* Error handling script */}
           <script src="/ChandanaGutta/error-handler.js" type="text/javascript"></script>
+          
+          {/* Path fixing script */}
+          <script src="/ChandanaGutta/fix-paths.js" type="text/javascript"></script>
         </Head>
         <body>
           <Main />

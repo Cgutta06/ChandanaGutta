@@ -554,7 +554,7 @@ export default function Experience() {
             </p>
             <div className="flex justify-center">
               <a 
-                href={getImagePath("/ChandanaGutta_Resume.pdf")} 
+                href="/ChandanaGutta_Resume.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
