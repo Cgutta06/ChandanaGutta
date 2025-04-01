@@ -4,10 +4,16 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/chandanagutta/' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/chandanagutta' : '',
-  trailingSlash: true,
   output: 'export',
+  
+  // The trailing slash is important for GitHub Pages
+  trailingSlash: true,
+  
+  // Only use these in production, and make sure they match your repo name exactly
+  ...(process.env.NODE_ENV === 'production' ? {
+    assetPrefix: '/ChandanaGutta/',
+    basePath: '/ChandanaGutta',
+  } : {}),
 }
 
 module.exports = nextConfig
