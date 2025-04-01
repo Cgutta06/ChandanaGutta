@@ -9,6 +9,7 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon
 } from '@heroicons/react/24/outline';
+import { getImagePath } from '../utils/path-utils';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -46,7 +47,10 @@ export default function Contact() {
       {/* Header Section */}
       <section className="relative py-20 bg-gradient-to-r from-blue-900 to-gray-900 text-white">
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="absolute inset-0 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
+          style={{ backgroundImage: `url(${getImagePath('/images/contact-bg.jpg')})` }}
+        ></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -87,13 +91,13 @@ export default function Contact() {
                   {/* Contact image overlay */}
                   <div 
                     className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
-                    style={{ backgroundImage: "url('/images/contact-image.jpg')" }}
+                    style={{ backgroundImage: `url(${getImagePath('/images/contact-image.jpg')})` }}
                   ></div>
                 </div>
                 <div className="relative px-8 py-10">
                   <div className="absolute -top-16 left-8 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center">
                     <img 
-                      src="/images/profile.jpg"
+                      src={getImagePath('/images/profile.jpg')}
                       alt="Chandana Gutta"
                       className="w-20 h-20 object-cover rounded-lg"
                     />
@@ -342,7 +346,7 @@ export default function Contact() {
               experience, and achievements.
             </p>
             <motion.a
-              href="/ChandanaGutta_Resume.pdf"
+              href={getImagePath('/ChandanaGutta_Resume.pdf')}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}

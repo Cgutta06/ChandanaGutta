@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { DocumentIcon } from '@heroicons/react/24/outline';
+import { getImagePath } from '../utils/path-utils';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,14 +24,12 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   }, [router.pathname]);
 
-  // Use base path for navigation links
-  const basePath = process.env.NODE_ENV === 'production' ? '/ChandanaGutta' : '';
-  
+  // We need direct paths without basePath since Next.js will add it automatically
   const navLinks = [
-    { href: `${basePath}/`, label: 'Home' },
-    { href: `${basePath}/portfolio`, label: 'Portfolio' },
-    { href: `${basePath}/experience`, label: 'Experience' },
-    { href: `${basePath}/contact`, label: 'Contact' }
+    { href: '/', label: 'Home' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/experience', label: 'Experience' },
+    { href: '/contact', label: 'Contact' }
   ];
 
   return (
@@ -80,7 +79,7 @@ const Navigation = () => {
 
           {/* Resume Button */}
           <motion.a
-            href={`${basePath}/ChandanaGutta_Resume.pdf`}
+            href={getImagePath('/ChandanaGutta_Resume.pdf')}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -145,7 +144,7 @@ const Navigation = () => {
               </Link>
             ))}
             <a
-              href={`${basePath}/ChandanaGutta_Resume.pdf`}
+              href={getImagePath('/ChandanaGutta_Resume.pdf')}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-white hover:text-blue-400 transition-colors"

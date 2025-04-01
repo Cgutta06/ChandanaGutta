@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { ArrowDownIcon, BuildingOffice2Icon, AcademicCapIcon, BriefcaseIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Head from 'next/head';
+import { getImagePath } from '../utils/path-utils';
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -145,7 +146,7 @@ export default function Home() {
         
         <motion.div 
           style={{ 
-            backgroundImage: "url('/images/hero-bg.jpg')", 
+            backgroundImage: `url('${getImagePath('/images/hero-bg.jpg')}')`, 
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -272,7 +273,7 @@ export default function Home() {
             >
               <div className="aspect-square rounded-lg overflow-hidden shadow-2xl">
                 <img 
-                  src="/images/profile.jpg" 
+                  src={getImagePath('/images/profile.jpg')} 
                   alt="Chandana Gutta" 
                   className="w-full h-full object-cover"
                 />
@@ -446,9 +447,9 @@ export default function Home() {
                   <div 
                     className="w-full h-full bg-blue-100 group-hover:scale-110 transition-transform duration-700"
                     style={{
-                      backgroundImage: `url(${project.image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
+                    backgroundImage: `url(${getImagePath(project.image)})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -525,7 +526,7 @@ export default function Home() {
                   Contact Me
                 </motion.button>
               </Link>
-              <a href="/ChandanaGutta_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href={getImagePath('/ChandanaGutta_Resume.pdf')} target="_blank" rel="noopener noreferrer">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
                   whileTap={{ scale: 0.95 }}

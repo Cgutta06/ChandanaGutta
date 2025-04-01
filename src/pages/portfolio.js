@@ -11,6 +11,7 @@ import {
   ArrowsRightLeftIcon,
   AdjustmentsHorizontalIcon
 } from '@heroicons/react/24/outline';
+import { getImagePath } from '../utils/path-utils';
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -160,7 +161,10 @@ export default function Portfolio() {
       {/* Header Section */}
       <section className="relative py-24 bg-gradient-to-r from-blue-900 to-gray-900 text-white">
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="absolute inset-0 bg-[url('/images/portfolio-bg.jpg')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
+          style={{ backgroundImage: `url(${getImagePath('/images/portfolio-bg.jpg')})` }}  
+        ></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -234,7 +238,7 @@ export default function Portfolio() {
                     <div 
                       className="w-full h-full bg-blue-100 hover:scale-110 transition-transform duration-700"
                       style={{
-                        backgroundImage: `url(${project.image})`,
+                        backgroundImage: `url(${getImagePath(project.image)})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                       }}

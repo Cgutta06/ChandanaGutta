@@ -11,6 +11,7 @@ import {
   ChevronRightIcon,
   CheckBadgeIcon
 } from '@heroicons/react/24/outline';
+import { getImagePath } from '../utils/path-utils';
 
 export default function Experience() {
   const [activeTab, setActiveTab] = useState('professional');
@@ -63,7 +64,7 @@ export default function Experience() {
           ]
         }
       ],
-      logo: "/images/ecs-logo.png"
+      logo: getImagePath("/images/ecs-logo.png")
     },
     {
       id: 2,
@@ -83,7 +84,7 @@ export default function Experience() {
           ]
         }
       ],
-      logo: "/images/ecs-logo.png"
+      logo: getImagePath("/images/ecs-logo.png")
     },
     {
       id: 3,
@@ -103,7 +104,7 @@ export default function Experience() {
           ]
         }
       ],
-      logo: "/images/bgsu-logo.png"
+      logo: getImagePath("/images/bgsu-logo.png")
     },
     {
       id: 4,
@@ -124,7 +125,7 @@ export default function Experience() {
           ]
         }
       ],
-      logo: "/images/an-logo.png"
+      logo: getImagePath("/images/an-logo.png")
     }
   ];
 
@@ -143,7 +144,7 @@ export default function Experience() {
         "Construction Management Planning & Scheduling",
         "Data Analysis & Decision Making"
       ],
-      logo: "/images/bgsu-logo.png"
+      logo: getImagePath("/images/bgsu-logo.png")
     },
     {
       id: 2,
@@ -158,7 +159,7 @@ export default function Experience() {
         "Construction Documentation",
         "Project Planning & Management"
       ],
-      logo: "/images/reva-logo.png"
+      logo: getImagePath("/images/reva-logo.png")
     }
   ];
 
@@ -225,7 +226,10 @@ export default function Experience() {
       {/* Header Section */}
       <section className="relative py-24 bg-gradient-to-r from-blue-900 to-gray-900 text-white">
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="absolute inset-0 bg-[url('/images/experience-bg.jpg')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
+          style={{ backgroundImage: `url(${getImagePath('/images/experience-bg.jpg')})` }}
+        ></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
@@ -550,7 +554,7 @@ export default function Experience() {
             </p>
             <div className="flex justify-center">
               <a 
-                href="/ChandanaGutta_Resume.pdf" 
+                href={getImagePath("/ChandanaGutta_Resume.pdf")} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
