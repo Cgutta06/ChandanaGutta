@@ -30,9 +30,15 @@ jobs:
       - name: Build
         run: npm run build
       
-      - name: Add .nojekyll file
-        run: touch out/.nojekyll
-        
+      - name: Prepare for deployment
+        run: |
+          # Create .nojekyll file (important!)
+          touch out/.nojekyll
+          # Copy special index.html to root of gh-pages
+          cp gh-pages-index.html out/index.html
+          # Fix directory permissions
+          chmod -R +r out
+          
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:

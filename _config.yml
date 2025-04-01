@@ -1,0 +1,8 @@
+title: Chandana Gutta Portfolio
+description: Portfolio site for Chandana Gutta - Facilities Project Manager, Building Envelope Commissioner, and Architect.
+url: https://cgutta06.github.io/ChandanaGutta
+baseurl: /ChandanaGutta
+
+# Disable Jekyll processing (important!)
+include: [".nojekyll"]
+exclude: ["README.md"]
