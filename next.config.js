@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === 'production';
-const repositoryName = 'ChandanaGutta';
-
 const nextConfig = {
   reactStrictMode: true,
   
@@ -17,8 +14,10 @@ const nextConfig = {
   trailingSlash: true,
   
   // GitHub Pages path prefix - critical for assets to load correctly
-  basePath: isProduction ? `/${repositoryName}` : '',
-  assetPrefix: isProduction ? `/${repositoryName}/` : '',
+  ...(process.env.NODE_ENV === 'production' ? {
+    basePath: '/ChandanaGutta',
+    assetPrefix: '/ChandanaGutta/',
+  } : {}),
 }
 
 module.exports = nextConfig
