@@ -34,13 +34,18 @@ jobs:
         run: |
           # Create .nojekyll file (important!)
           touch out/.nojekyll
-          # Add 404.html for SPA fallback
-          cp out/404/index.html out/404.html
-          # Ensure all files are readable
-          chmod -R +r out
           
-      - name: Debug output directory
-        run: ls -la out/
+          # Create a copy of index.html as 404.html if it doesn't exist
+          if [ ! -f out/404.html ]; then
+            cp out/index.html out/404.html
+          fi
+          
+          # Copy any public files that may have been missed in build
+          cp -r public/* out/ || true
+          
+          # Debug output
+          echo "Contents of output directory:"
+          ls -la out/
           
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4

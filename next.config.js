@@ -16,7 +16,7 @@ const nextConfig = {
   // GitHub Pages path prefix - critical for assets to load correctly
   ...(process.env.NODE_ENV === 'production' ? {
     basePath: '/ChandanaGutta',
-    assetPrefix: '/ChandanaGutta/',
+    assetPrefix: '/ChandanaGutta',
   } : {}),
 }
 

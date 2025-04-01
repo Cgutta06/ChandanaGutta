@@ -3,34 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>Chandana Gutta | Page Not Found</title>
-  <script type="text/javascript">
-    // Single Page Apps for GitHub Pages
-    // MIT License
-    // This script takes the current URL path and converts it
-    // to the corresponding path with the basePath for GitHub Pages
-    (function(l) {
-      if (l.search[1] === '/' ) {
-        var decoded = l.search.slice(1).split('&').map(function(s) { 
-          return s.replace(/~and~/g, '&')
-        }).join('?');
-        window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + decoded + l.hash
-        );
-      }
-      
-      // Handle any unresolved paths by redirecting to the base URL
-      if (l.hostname.includes('github.io')) {
-        var pathSegments = l.pathname.split('/');
-        if (pathSegments.length > 2) {
-          if (!l.pathname.endsWith('/')) {
-            pathSegments[2] = pathSegments[2] + '/';
-            window.location.replace('/ChandanaGutta/');
-          }
-        }
-      }
-    }(window.location))
-  </script>
-  <meta http-equiv="refresh" content="0;URL='/ChandanaGutta/'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
@@ -46,18 +18,23 @@
       margin: 20px 0;
     }
     a {
-      color: #3b82f6;
+      display: inline-block;
+      background-color: #3b82f6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
+      margin-top: 20px;
     }
     a:hover {
-      text-decoration: underline;
+      background-color: #2563eb;
     }
   </style>
 </head>
 <body>
   <h1>Page Not Found</h1>
-  <p>Redirecting to the homepage...</p>
-  <p>If you are not redirected automatically, follow this <a href="/ChandanaGutta/">link to the homepage</a>.</p>
+  <p>The page you are looking for doesn't exist or has been moved.</p>
+  <a href="/ChandanaGutta/">Return to Homepage</a>
 </body>
 </html>

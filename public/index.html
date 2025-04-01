@@ -2,27 +2,94 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Chandana Gutta | Redirecting...</title>
-  <script type="text/javascript">
-    // Handle GitHub Pages redirect for index.html itself
-    (function() {
-      // Only redirect if we're on GitHub Pages
-      if (window.location.hostname.includes('github.io')) {
-        var pathname = window.location.pathname;
-        // Check if we're at the index.html page specifically and redirect to the trailing slash version
-        if (pathname.endsWith('/index.html')) {
-          window.location.replace(pathname.substring(0, pathname.length - 10) + '/');
-          return;
-        }
-        // Handle root paths
-        if (pathname === '/' || pathname === '/ChandanaGutta' || pathname === '/ChandanaGutta/index.html') {
-          window.location.replace('/ChandanaGutta/');
-        }
-      }
-    })();
-  </script>
+  <title>Chandana Gutta | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- No redirects - this is the static landing page -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f5f8fa;
+    }
+    header {
+      background: linear-gradient(to right, #1e3a8a, #3b82f6);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    p {
+      line-height: 1.6;
+      color: #333;
+    }
+    .loading {
+      margin: 2rem 0;
+      font-size: 1.2rem;
+      color: #666;
+    }
+    footer {
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+    }
+    .button {
+      display: inline-block;
+      background-color: #3b82f6;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 1rem 0;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #2563eb;
+    }
+  </style>
 </head>
 <body>
-  <p>If you are not redirected automatically, follow this <a href="/ChandanaGutta/">link to the homepage</a>.</p>
+  <header>
+    <h1>Chandana Gutta</h1>
+    <p>Facilities Project Manager | Building Envelope Commission | Architect</p>
+  </header>
+  
+  <main>
+    <h2>Welcome to My Portfolio</h2>
+    <p>
+      Bridging architectural vision with practical execution. 
+      Specialized in building envelope systems and project delivery 
+      that balances form, function, and sustainability.
+    </p>
+    
+    <a href="/" class="button">Enter Portfolio</a>
+    
+    <div class="loading">
+      If the portfolio doesn't load, please check that you're at the correct URL:
+      <br>
+      <strong>https://cgutta06.github.io/ChandanaGutta/</strong>
+    </div>
+  </main>
+  
+  <footer>
+    &copy; 2025 Chandana Gutta. All rights reserved.
+  </footer>
 </body>
 </html>
