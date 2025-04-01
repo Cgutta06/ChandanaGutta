@@ -346,7 +346,7 @@ export default function Contact() {
               experience, and achievements.
             </p>
             <motion.a
-              href="/ChandanaGutta_Resume.pdf"
+              href="/ChandanaGutta/ChandanaGutta_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}

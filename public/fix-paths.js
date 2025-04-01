@@ -23,7 +23,7 @@
   
   // Fix PDF links - check if user is trying to access a PDF
   const path = window.location.pathname;
-  if (path.includes('ChandanaGutta_Resume.pdf')) {
+  if (path === '/ChandanaGutta_Resume.pdf' || path === '/ChandanaGutta/ChandanaGutta_Resume.pdf') {
     // Redirect to the correct PDF path
     console.log('Fixing PDF path');
     window.location.href = '/ChandanaGutta/ChandanaGutta_Resume.pdf';
