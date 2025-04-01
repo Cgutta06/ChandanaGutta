@@ -13,11 +13,9 @@ const nextConfig = {
   // Required for GitHub Pages
   trailingSlash: true,
   
-  // GitHub Pages path prefix - critical for assets to load correctly
-  ...(process.env.NODE_ENV === 'production' ? {
-    basePath: '/ChandanaGutta',
-    assetPrefix: '/ChandanaGutta',
-  } : {}),
+  // Get basePath from environment variable
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
 }
 
 module.exports = nextConfig

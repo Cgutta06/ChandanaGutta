@@ -23,8 +23,8 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   }, [router.pathname]);
 
-  // Get the base path - empty for local dev, '/ChandanaGutta' for production
-  const basePath = process.env.NODE_ENV === 'production' ? '/ChandanaGutta' : '';
+  // Get the base path from environment variable
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   
   const navLinks = [
     { href: `${basePath}/`, label: 'Home' },

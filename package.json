@@ -9,11 +9,11 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && npm run copy-files",
     "start": "next start",
     "lint": "next lint",
-    "preview": "node preview-build.js",
-    "deploy": "node deploy.js"
+    "copy-files": "node copy-files.js",
+    "preview": "node preview-build.js"
   },
   "dependencies": {
     "next": "14.0.4",

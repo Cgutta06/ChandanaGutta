@@ -7,17 +7,16 @@ class MyDocument extends Document {
   }
 
   render() {
-    // Determine if we're in a production environment
-    const isProduction = process.env.NODE_ENV === 'production';
-    const basePath = isProduction ? '/ChandanaGutta' : '';
+    // Get the base path from environment variable
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
     
     return (
       <Html lang="en">
         <Head>
-          {isProduction && <base href="/ChandanaGutta/" />}
+          {basePath && <base href={`${basePath}/`} />}
           
           {/* GitHub Pages specific script */}
-          {isProduction && (
+          {basePath && (
             <script
               dangerouslySetInnerHTML={{
                 __html: `
