@@ -6,8 +6,6 @@ import {
   EnvelopeIcon, 
   PhoneIcon, 
   MapPinIcon,
-  LinkedInIcon, 
-  ArrowRightIcon,
   CheckCircleIcon,
   ExclamationCircleIcon
 } from '@heroicons/react/24/outline';
@@ -85,10 +83,20 @@ export default function Contact() {
                 transition={{ duration: 0.6 }}
                 className="bg-white rounded-2xl shadow-xl overflow-hidden"
               >
-                <div className="h-32 bg-gradient-to-r from-blue-600 to-blue-800"></div>
+                <div className="h-32 bg-gradient-to-r from-blue-600 to-blue-800 relative">
+                  {/* Contact image overlay */}
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
+                    style={{ backgroundImage: "url('/images/contact-image.jpg')" }}
+                  ></div>
+                </div>
                 <div className="relative px-8 py-10">
                   <div className="absolute -top-16 left-8 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center">
-                    <span className="text-4xl font-bold text-blue-600">Chandana Gutta</span>
+                    <img 
+                      src="/images/profile.jpg"
+                      alt="Chandana Gutta"
+                      className="w-20 h-20 object-cover rounded-lg"
+                    />
                   </div>
 
                   <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-6">Contact Information</h2>
