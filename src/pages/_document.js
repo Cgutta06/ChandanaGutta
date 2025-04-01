@@ -6,11 +6,14 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
-  render() {    
+  render() {
+    // Base path for GitHub Pages
+    const isProduction = process.env.NODE_ENV === 'production';
+    
     return (
       <Html lang="en">
         <Head>
-          {/* No redirection scripts or base tags needed */}
+          {isProduction && <base href="/ChandanaGutta/" />}
         </Head>
         <body>
           <Main />
