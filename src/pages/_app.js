@@ -27,12 +27,12 @@ function MyApp({ Component, pageProps, router }) {
         <title>Chandana Gutta | Facilities Project Manager | Architect</title>
         <meta name="description" content="Portfolio of Chandana Gutta - Facilities Project Manager, Building Envelope Commissioner, and Architect." />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${process.env.NODE_ENV === 'production' ? '/ChandanaGutta' : ''}/favicon.ico`} />
         
         {/* Open Graph / Social Media Meta Tags */}
         <meta property="og:title" content="Chandana Gutta | Facilities Project Manager | Architect" />
         <meta property="og:description" content="Portfolio of Chandana Gutta - Facilities Project Manager, Building Envelope Commissioner, and Architect." />
-        <meta property="og:image" content="/images/og-image.jpg" />
+        <meta property="og:image" content={`${process.env.NODE_ENV === 'production' ? '/ChandanaGutta' : ''}/images/og-image.jpg`} />
         <meta property="og:url" content="https://cgutta06.github.io/ChandanaGutta/" />
         <meta property="og:type" content="website" />
         
@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps, router }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Chandana Gutta | Facilities Project Manager | Architect" />
         <meta name="twitter:description" content="Portfolio of Chandana Gutta - Facilities Project Manager, Building Envelope Commissioner, and Architect." />
-        <meta name="twitter:image" content="/images/og-image.jpg" />
+        <meta name="twitter:image" content={`${process.env.NODE_ENV === 'production' ? '/ChandanaGutta' : ''}/images/og-image.jpg`} />
         
         {/* Theme Color for Browser */}
         <meta name="theme-color" content="#1E3A8A" />

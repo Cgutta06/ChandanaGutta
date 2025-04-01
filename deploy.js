@@ -35,7 +35,7 @@ try {
   process.exit(1);
 }
 
-// Create .nojekyll
+// Create .nojekyll and copy necessary files
 const outDir = path.join(__dirname, 'out');
 const nojekyllPath = path.join(outDir, '.nojekyll');
 
@@ -43,6 +43,16 @@ if (!fs.existsSync(nojekyllPath)) {
   console.log('Creating .nojekyll file...');
   fs.writeFileSync(nojekyllPath, '');
   console.log('✅ Created .nojekyll file');
+}
+
+// Copy root index.html to the out directory if it doesn't exist
+const rootIndexPath = path.join(__dirname, 'index.html');
+const outIndexPath = path.join(outDir, 'index.html');
+
+if (fs.existsSync(rootIndexPath) && !fs.existsSync(outIndexPath)) {
+  console.log('Copying root index.html to output directory...');
+  fs.copyFileSync(rootIndexPath, outIndexPath);
+  console.log('✅ Copied index.html');
 }
 
 // Deploy to GitHub Pages
