@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   
-  // Static HTML export
+  // Static HTML export - replaces the need for 'next export' command
   output: 'export',
   
   // Disable image optimization for static export

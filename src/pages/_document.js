@@ -14,7 +14,7 @@ class MyDocument extends Document {
           <base href="/ChandanaGutta/" />
           
           {/* Error handling script */}
-          <script src="/ChandanaGutta/error-handler.js" />
+          <script src="/ChandanaGutta/error-handler.js" type="text/javascript"></script>
         </Head>
         <body>
           <Main />
