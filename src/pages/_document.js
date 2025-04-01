@@ -7,13 +7,14 @@ class MyDocument extends Document {
   }
 
   render() {
-    // Base path for GitHub Pages
-    const isProduction = process.env.NODE_ENV === 'production';
-    
     return (
       <Html lang="en">
         <Head>
-          {isProduction && <base href="/ChandanaGutta/" />}
+          {/* Simple base tag without conditional logic */}
+          <base href="/ChandanaGutta/" />
+          
+          {/* Error handling script */}
+          <script src="/ChandanaGutta/error-handler.js" />
         </Head>
         <body>
           <Main />

@@ -9,11 +9,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npm run copy-files",
+    "build": "next build && next export -o out && touch out/.nojekyll",
     "start": "next start",
-    "lint": "next lint",
-    "copy-files": "node copy-files.js",
-    "preview": "node preview-build.js"
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "14.0.4",
