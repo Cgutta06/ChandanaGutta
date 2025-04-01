@@ -13,9 +13,9 @@ const nextConfig = {
   // Required for GitHub Pages
   trailingSlash: true,
   
-  // Get basePath from environment variable
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  // No base path needed
+  basePath: '',
+  assetPrefix: '',
 }
 
 module.exports = nextConfig

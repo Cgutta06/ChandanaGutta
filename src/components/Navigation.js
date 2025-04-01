@@ -23,14 +23,11 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   }, [router.pathname]);
 
-  // Get the base path from environment variable
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-  
   const navLinks = [
-    { href: `${basePath}/`, label: 'Home' },
-    { href: `${basePath}/portfolio`, label: 'Portfolio' },
-    { href: `${basePath}/experience`, label: 'Experience' },
-    { href: `${basePath}/contact`, label: 'Contact' }
+    { href: '/', label: 'Home' },
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/experience', label: 'Experience' },
+    { href: '/contact', label: 'Contact' }
   ];
 
   return (
@@ -80,7 +77,7 @@ const Navigation = () => {
 
           {/* Resume Button */}
           <motion.a
-            href={`${basePath}/ChandanaGutta_Resume.pdf`}
+            href="/ChandanaGutta_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -145,7 +142,7 @@ const Navigation = () => {
               </Link>
             ))}
             <a
-              href={`${basePath}/ChandanaGutta_Resume.pdf`}
+              href="/ChandanaGutta_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-white hover:text-blue-400 transition-colors"
