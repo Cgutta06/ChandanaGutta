@@ -9,7 +9,9 @@ import {
   HomeModernIcon,
   BuildingLibraryIcon,
   ArrowsRightLeftIcon,
-  AdjustmentsHorizontalIcon
+  AdjustmentsHorizontalIcon,
+  BeakerIcon,
+  WrenchScrewdriverIcon
 } from '@heroicons/react/24/outline';
 import { getImagePath } from '../utils/path-utils';
 
@@ -27,10 +29,195 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
+      title: "Hospital Tower Envelope Performance Evaluation",
+      description: "Comprehensive water infiltration testing at the MetroHealth Apex facility to validate the exterior envelope system, focusing on curtain wall assembly.",
+      longDescription: "Our firm conducted comprehensive water infiltration testing at the MetroHealth Apex facility to validate the exterior envelope system. Testing focused on a United Architectural Metals curtain wall assembly in a punched opening. I constructed the specialized test chambers, integrating a centrifugal blower system for pressure control. The chambers were sealed to the concrete slab, metal studs, and steel beam. Following ASTM E1105 protocols, I implemented testing by first establishing baseline leakage with polyethylene sheeting and then measuring total airflow with the sheeting removed to determine net infiltration rates per square foot. This project demonstrates our commitment to building envelope integrity through precise validation testing.",
+      image: "/images/portfolio/hospital-tower-1.jpg",
+      additionalImages: [
+        "/images/portfolio/hospital-tower-2.jpg",
+        "/images/portfolio/hospital-tower-3.jpg",
+        "/images/portfolio/hospital-tower-4.jpg"
+      ],
+      budget: "Confidential",
+      date: "2022",
+      location: "Cleveland, OH",
+      category: "testing",
+      technologies: ["ASTM E1105", "Water Infiltration Testing", "Building Envelope Validation", "Test Chamber Construction"],
+      highlights: [
+        "Constructed specialized test chambers with centrifugal blower system",
+        "Implemented ASTM E1105 protocols for testing",
+        "Measured total airflow to determine net infiltration rates per square foot",
+        "Validated exterior envelope system integrity"
+      ]
+    },
+    {
+      id: 2,
+      title: "Building Envelope Air Leakage Testing",
+      description: "Comprehensive air leakage testing at the Ashley Courthouse Annex building with preparations handled by the contractor and their subcontractors.",
+      longDescription: "We conducted comprehensive air leakage testing at the Ashley Courthouse Annex building with preparations handled by the contractor and their subcontractors. The building envelope area measured 94,830 square feet with an allowable air leakage rate of 0.40 CFM/SQFT at 75Pa pressure differential, totaling a maximum permissible leakage of 37,932 CFM for compliance. Building preparation included sealing mechanical dampers, addressing deficient door weather stripping, replacing missing glass with OSB panels, and isolating critical interfaces with the existing courthouse structure. These targeted preparatory measures ensured testing accuracy by eliminating known temporary air pathways that would be resolved during the final construction phases.",
+      image: "/images/portfolio/air-leakage-1.jpg",
+      additionalImages: [
+        "/images/portfolio/air-leakage-2.jpg",
+        "/images/portfolio/air-leakage-3.jpg",
+        "/images/portfolio/air-leakage-4.jpg"
+      ],
+      budget: "Confidential",
+      date: "2023",
+      location: "Cleveland, OH",
+      category: "testing",
+      technologies: ["Air Leakage Testing", "Building Envelope", "Compliance Testing", "75Pa Pressure Differential"],
+      highlights: [
+        "Tested 94,830 square feet of building envelope area",
+        "Established allowable leakage rate of 0.40 CFM/SQFT at 75Pa",
+        "Coordinated with contractors for building preparation",
+        "Implemented strategic sealing and isolation techniques"
+      ]
+    },
+    {
+      id: 3,
+      title: "12-story - Façade Redesign",
+      description: "Comprehensive repair plan for The Condominiums at Stonebridge, a 12-story building experiencing air, moisture, and thermal difficulties since construction.",
+      longDescription: "The Condominiums at Stonebridge are located on the historic Superior Viaduct between downtown Cleveland and Ohio City. The building operates as a 12-story condominium that was constructed in 2003 of conventional steel and cold-formed metal framing systems. The building's exterior consists of a combination of aluminum panels, corrugated metal sheet goods, and thin-brick veneer systems applied directly over exterior gypsum sheathing. Since completion, the building has been plagued with air, moisture, and thermal difficulties due to lack of an air vapor barrier system. To address these problems, our comprehensive repair plan includes removing existing façade components, installing new continuous rigid insulation, implementing a new weather barrier system with associated flashing, and installing new aluminum composite material panels. The project is being completed in two phases, beginning with the north and west elevations.",
+      image: "/images/portfolio/facade-redesign-1.jpg",
+      additionalImages: [
+        "/images/portfolio/facade-redesign-2.jpg",
+        "/images/portfolio/facade-redesign-3.jpg",
+        "/images/portfolio/facade-redesign-4.jpg"
+      ],
+      budget: "Confidential",
+      date: "2022 - 2024",
+      location: "Cleveland, OH",
+      category: "residential",
+      technologies: ["Façade Redesign", "Weather Barrier Systems", "Building Envelope Repair", "Vapor Barrier Installation"],
+      highlights: [
+        "Developed comprehensive repair plan for 12-story condominium building",
+        "Addressed air, moisture, and thermal difficulties through façade replacement",
+        "Implemented new continuous rigid insulation and weather barrier system",
+        "Executed two-phase approach starting with north and west elevations"
+      ]
+    },
+    {
+      id: 4,
+      title: "Lakefront Condominium Renovation",
+      description: "Comprehensive renovation of a historic lakefront mansion converted into condominiums experiencing water infiltration issues on the lake-facing façade.",
+      longDescription: "We completed a comprehensive renovation of a historic lakefront mansion converted into condominiums. Units were experiencing water infiltration issues due to inadequate moisture protection on the lake-facing façade. Our project scope included replacing the original cedar siding with durable vinyl siding, waterproofing the traditional tile deck, and reconstructing and reinstalling the deck. Our targeted improvements successfully resolved the persistent water infiltration problems, protecting the historic structure while ensuring residents' comfort and property preservation.",
+      image: "/images/portfolio/lakefront-condo-1.jpg",
+      additionalImages: [
+        "/images/portfolio/lakefront-condo-2.jpg",
+        "/images/portfolio/lakefront-condo-3.jpg",
+        "/images/portfolio/lakefront-condo-4.jpg"
+      ],
+      budget: "$500K",
+      date: "2023",
+      location: "Cleveland, OH",
+      category: "historic",
+      technologies: ["Waterproofing", "Siding Replacement", "Historic Building Renovation", "Deck Reconstruction"],
+      highlights: [
+        "Replaced original cedar siding with durable vinyl siding",
+        "Implemented comprehensive waterproofing for traditional tile deck",
+        "Reconstructed and reinstalled deck with improved drainage",
+        "Resolved persistent water infiltration issues in historic structure"
+      ]
+    },
+    {
+      id: 5,
+      title: "Timber Court - Roof Design",
+      description: "Comprehensive roofing system design and contract administration services for a commercial facility.",
+      longDescription: "We provided comprehensive roofing system design and contract administration services for the client's facility. Our scope included conducting collaborative design development after agreement on the membrane/insulation system options, creating preliminary and final plans with detailed technical specifications for the new roofing system, meeting with the client to discuss project plans and requirements, developing a complete design bid package with alternatives and anticipated construction cost estimates, preparing and distributing final Contract Documents, responding to technical inquiries, conducting an on-site pre-bid meeting, and providing expert recommendations for construction contract awards. We ensured provision of a well-designed roofing solution with thorough documentation and professional oversight throughout the bidding process.",
+      image: "/images/portfolio/timber-court-1.jpg",
+      additionalImages: [
+        "/images/portfolio/timber-court-2.jpg",
+        "/images/portfolio/timber-court-3.jpg",
+        "/images/portfolio/timber-court-4.jpg"
+      ],
+      budget: "Confidential",
+      date: "2023",
+      location: "Cleveland, OH",
+      category: "commercial",
+      technologies: ["Roofing System Design", "Technical Specifications", "Contract Administration", "Bid Package Development"],
+      highlights: [
+        "Developed detailed technical specifications for new roofing system",
+        "Created comprehensive design bid package with alternatives",
+        "Conducted on-site pre-bid meeting with contractors",
+        "Provided expert recommendations for construction contract awards"
+      ]
+    },
+    {
+      id: 6,
+      title: "Structural Inspection: Cleveland Clinic Garage",
+      description: "Comprehensive structural inspection of the existing Walker Center Parking Garage with detailed assessment and documentation.",
+      longDescription: "We performed a comprehensive structural inspection of the existing Walker Center Parking Garage located in Cleveland, Ohio. Our scope of work included visual assessment of the tops and undersides of all accessible garage floors, evaluation of the exterior facade conditions visible from floor level, documentation of structural and cosmetic defects across all four levels (basement, first floor, second floor, and roof), identification of water infiltration issues and potential sources, assessment of concrete condition (including spalls, cracks, and joint deterioration), evaluation of masonry walls (including crack documentation and control joint condition), comprehensive photographic documentation of all observed deficiencies, creation of detailed drawings showing precise locations of identified defects, and development of a written report with findings and recommendations for repairs. Our inspection established the overall condition of this cast-in-place reinforced concrete structure while identifying specific areas requiring maintenance or remediation.",
+      image: "/images/portfolio/garage-inspection-1.jpg",
+      additionalImages: [
+        "/images/portfolio/garage-inspection-2.jpg",
+        "/images/portfolio/garage-inspection-3.jpg",
+        "/images/portfolio/garage-inspection-4.jpg"
+      ],
+      budget: "Confidential",
+      date: "2022",
+      location: "Cleveland, OH",
+      category: "commercial",
+      technologies: ["Structural Inspection", "Condition Assessment", "Documentation & Reporting", "Concrete Evaluation"],
+      highlights: [
+        "Conducted visual assessment of all accessible garage floors",
+        "Documented structural and cosmetic defects across four levels",
+        "Identified water infiltration issues and potential sources",
+        "Developed comprehensive report with repair recommendations"
+      ]
+    },
+    {
+      id: 7,
+      title: "Quality Assurance for Condominium Renovation",
+      description: "Specialized construction quality assurance consulting for the renovation of a 37-unit condominium complex originally developed in 1986.",
+      longDescription: "We provide specialized construction quality assurance consulting for the renovation of a 37-unit condominium complex originally developed in 1986. Our team has been engaged to oversee the replacement of cedar siding systems and auxiliary components, including gutters, downspouts, and trim. We identify critical contract oversights, including the absence of provisions for replacement of deteriorated roof sheathing, costs for framing or structural member replacements, and other miscellaneous replacements that may be uncovered. We recommend negotiating these items with contractors and establishing tracking methods to manage unexpected discoveries effectively. As the project advances, our team conducts progressive inspections of flashing components and rooftop penetrations, including soil stacks, adjoining walls, skylights, and chimneys, to ensure comprehensive quality control throughout the renovation process.",
+      image: "/images/portfolio/condo-qa-1.jpg",
+      additionalImages: [
+        "/images/portfolio/condo-qa-2.jpg",
+        "/images/portfolio/condo-qa-3.jpg",
+        "/images/portfolio/condo-qa-4.jpg"
+      ],
+      budget: "Confidential",
+      date: "2023 - Present",
+      location: "Cleveland, OH",
+      category: "residential",
+      technologies: ["Quality Assurance", "Construction Oversight", "Contract Analysis", "Inspection Services"],
+      highlights: [
+        "Oversee replacement of cedar siding systems and auxiliary components",
+        "Identify critical contract oversights and recommendation solutions",
+        "Establish tracking methods for managing unexpected discoveries",
+        "Conduct progressive inspections of flashing components and rooftop penetrations"
+      ]
+    },
+    {
+      id: 8,
+      title: "Project Management Expertise",
+      description: "Comprehensive project management services including contract oversight, quality control, and coordination across multiple construction projects.",
+      longDescription: "We provide expert project management services across a variety of construction and renovation projects. Our approach includes identifying critical contract oversights, establishing effective tracking methods for managing unexpected discoveries, conducting progressive inspections of key building components, and ensuring comprehensive quality control throughout the construction process. We focus on proactive problem-solving, stakeholder coordination, and maintaining strict adherence to project timelines and budgets while ensuring all work meets or exceeds industry standards.",
+      image: "/images/portfolio/project-mgmt-1.jpg",
+      additionalImages: [
+        "/images/portfolio/project-mgmt-2.jpg",
+        "/images/portfolio/project-mgmt-3.jpg",
+        "/images/portfolio/project-mgmt-4.jpg"
+      ],
+      budget: "Varied",
+      date: "Ongoing",
+      location: "Cleveland, OH",
+      category: "management",
+      technologies: ["Project Management", "Quality Control", "Contract Administration", "Stakeholder Coordination"],
+      highlights: [
+        "Oversee multiple construction projects simultaneously",
+        "Implement effective tracking methods for project milestones",
+        "Coordinate between contractors, clients, and regulatory authorities",
+        "Ensure adherence to project specifications and quality standards"
+      ]
+    },
+    {
+      id: 9,
       title: "Stonebridge Condominium",
       description: "Comprehensive building envelope rehabilitation project addressing water infiltration and structural issues in a multi-unit residential complex.",
       longDescription: "Led the rehabilitation of Stonebridge Condominium's building envelope, a complex project involving extensive waterproofing solutions, structural repairs, and facade restoration. The project required coordination with multiple stakeholders including the condominium board, residents, and specialized contractors. Implemented standardized waterproofing solutions which increased consistency across the building and reduced rework by 20%.",
       image: "/images/stonebridge.jpg",
+      additionalImages: [],
       budget: "$6M",
       date: "2023 - Present",
       location: "Cleveland, OH",
@@ -44,11 +231,12 @@ export default function Portfolio() {
       ]
     },
     {
-      id: 2,
+      id: 10,
       title: "Cashelmara Condominium",
       description: "Historic 11-story building restoration with focus on preserving architectural integrity while implementing modern waterproofing and structural reinforcement solutions.",
       longDescription: "The Cashelmara Condominium project involved the restoration of a historic 11-story building with strict preservation requirements. As project manager, I led the documentation of existing conditions, development of restoration approaches, and coordination with historical preservation authorities. The project successfully balanced historic authenticity with modern performance requirements.",
       image: "/images/cashelmara.jpg",
+      additionalImages: [],
       budget: "$3M",
       date: "2023 - Present",
       location: "Cleveland, OH",
@@ -62,11 +250,12 @@ export default function Portfolio() {
       ]
     },
     {
-      id: 3,
+      id: 11,
       title: "Park Building",
       description: "Commercial and residential mixed-use building renovation focusing on structural rehabilitation, ADA compliance, and energy efficiency improvements.",
       longDescription: "The Park Building project represents a comprehensive approach to mixed-use building renovation. The scope included structural rehabilitation, envelope improvements, and accessibility upgrades. The project required careful planning and phasing to minimize disruption to current tenants while implementing significant improvements throughout the structure.",
       image: "/images/parkbuilding.jpg",
+      additionalImages: [],
       budget: "$1.5M",
       date: "2023 - Present",
       location: "Cleveland, OH",
@@ -80,11 +269,12 @@ export default function Portfolio() {
       ]
     },
     {
-      id: 4,
+      id: 12,
       title: "Two-Story Residential Projects",
       description: "Management of multiple residential projects from concept to completion, with focus on client satisfaction and sustainable design elements.",
       longDescription: "During my time as a Junior Architect at AN Architect, I managed three two-story residential projects simultaneously. Each project required unique design solutions, client coordination, and construction oversight. I implemented sustainable building features that reduced energy consumption by approximately 25% compared to conventional designs.",
       image: "/images/residential-projects.jpg",
+      additionalImages: [],
       budget: "Varied",
       date: "2019 - 2021",
       location: "Bengaluru, India",
@@ -98,11 +288,12 @@ export default function Portfolio() {
       ]
     },
     {
-      id: 5,
+      id: 13,
       title: "20-Story Residential Tower",
       description: "Visualization and material specification for a high-rise residential tower, focusing on modern design elements and efficient space utilization.",
       longDescription: "Contributed to the design and documentation of a 20-story residential tower in Bengaluru, delivering visualization and material specification from concept to completion. The project focused on modern aesthetics, optimized space utilization, and integration of community amenities. My role involved creating detailed renderings, material specifications, and coordination with the design team.",
       image: "/images/high-rise.jpg",
+      additionalImages: [],
       budget: "Confidential",
       date: "2020 - 2021",
       location: "Bengaluru, India",
@@ -123,7 +314,9 @@ export default function Portfolio() {
     { id: 'residential', name: 'Residential', icon: HomeModernIcon },
     { id: 'commercial', name: 'Commercial', icon: BuildingOffice2Icon },
     { id: 'historic', name: 'Historic', icon: BuildingLibraryIcon },
-    { id: 'high-rise', name: 'High-Rise', icon: ArrowsRightLeftIcon }
+    { id: 'high-rise', name: 'High-Rise', icon: ArrowsRightLeftIcon },
+    { id: 'testing', name: 'Testing & Validation', icon: BeakerIcon },
+    { id: 'management', name: 'Project Management', icon: WrenchScrewdriverIcon }
   ];
 
   // Filter projects based on active filter
@@ -301,6 +494,27 @@ export default function Portfolio() {
                           className="mt-4 pt-4 border-t border-gray-100 overflow-hidden"
                         >
                           <p className="text-gray-700 mb-4">{project.longDescription}</p>
+                          
+                          {/* Image Gallery - only show if there are additional images */}
+                          {project.additionalImages && project.additionalImages.length > 0 && (
+                            <div className="mb-6">
+                              <h4 className="font-semibold text-gray-900 mb-3">Project Images:</h4>
+                              <div className="grid grid-cols-2 gap-2">
+                                {project.additionalImages.map((img, idx) => (
+                                  <div key={idx} className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
+                                    <div 
+                                      className="w-full h-full bg-blue-100"
+                                      style={{
+                                        backgroundImage: `url(${getImagePath(img)})`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center'
+                                      }}
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                           
                           <h4 className="font-semibold text-gray-900 mb-2">Key Highlights:</h4>
                           <ul className="list-disc list-inside space-y-1 text-gray-600 mb-4">
