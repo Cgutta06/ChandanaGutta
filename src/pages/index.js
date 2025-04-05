@@ -1,14 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { ArrowDownIcon, BuildingOffice2Icon, AcademicCapIcon, BriefcaseIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { ArrowDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Head from 'next/head';
 import { getImagePath } from '../utils/path-utils';
+import SkillCategoryVisualization from '../components/charts/SkillCategoryVisualization';
+import skillCategories from '../data/skillCategories';
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const scrollRef = useRef(null);
-  const [activeSkillTab, setActiveSkillTab] = useState('technical');
+  // State for project visibility
+
   const [visibleProject, setVisibleProject] = useState(null);
 
   // Animation variants
@@ -130,23 +133,23 @@ export default function Home() {
       </Head>
 
       {/* Scroll Progress Indicator */}
-      <motion.div 
+      <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-blue-600 origin-left z-50"
         style={{ scaleX }}
       />
 
       {/* Hero Section with Parallax Effect */}
       <section className="h-screen relative overflow-hidden">
-        <motion.div 
-          className="absolute inset-0 bg-gradient-to-br from-blue-900 to-gray-900 opacity-90" 
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-blue-900 to-gray-900 opacity-90"
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.9 }}
           transition={{ duration: 1.5 }}
         />
-        
-        <motion.div 
-          style={{ 
-            backgroundImage: `url('${getImagePath('/images/hero-bg.jpg')}')`, 
+
+        <motion.div
+          style={{
+            backgroundImage: `url('${getImagePath('/images/hero-bg.jpg')}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -155,7 +158,7 @@ export default function Home() {
           transition={{ duration: 1.5 }}
           className="absolute inset-0 mix-blend-overlay"
         />
-        
+
         <div className="relative container mx-auto px-4 h-full flex flex-col justify-center">
           <motion.div
             variants={fadeIn}
@@ -166,7 +169,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ 
+              transition={{
                 duration: 0.8,
                 type: "spring",
                 stiffness: 100
@@ -176,8 +179,8 @@ export default function Home() {
                 Chandana Gutta
               </h1>
             </motion.div>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-xl md:text-3xl mb-6 text-blue-200"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -187,19 +190,19 @@ export default function Home() {
               <span className="border-r-2 border-blue-400 pr-3 mr-3">Building Envelope Commission</span>
               <span>Architect</span>
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Bridging architectural vision with practical execution. 
-              Specialized in building envelope systems and project delivery 
+              Bridging architectural vision with practical execution.
+              Specialized in building envelope systems and project delivery
               that balances form, function, and sustainability.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex flex-col sm:flex-row justify-center gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -225,9 +228,9 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-        
+
         {/* Scroll down indicator */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white flex flex-col items-center cursor-pointer"
           onClick={() => scrollRef.current?.scrollIntoView({ behavior: 'smooth' })}
           animate={{ y: [0, 10, 0] }}
@@ -241,7 +244,7 @@ export default function Home() {
       {/* About Me Section */}
       <section ref={scrollRef} className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
@@ -251,13 +254,13 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
             <p className="text-lg text-gray-700 mb-6">
-              A passionate architect turned facilities project manager, I bring together design vision and practical execution. 
-              With degrees in both Architecture and Construction Management, I specialize in building envelope systems and 
+              A passionate architect turned facilities project manager, I bring together design vision and practical execution.
+              With degrees in both Architecture and Construction Management, I specialize in building envelope systems and
               project delivery that prioritizes both form and function.
             </p>
             <p className="text-lg text-gray-700">
-              My journey from architectural design to construction management has given me a unique perspective on how buildings come together - 
-              from concept to completion. I'm passionate about creating lasting impact through innovative construction solutions while 
+              My journey from architectural design to construction management has given me a unique perspective on how buildings come together -
+              from concept to completion. I'm passionate about creating lasting impact through innovative construction solutions while
               maintaining the delicate balance between architectural aesthetics and technical performance.
             </p>
           </motion.div>
@@ -272,13 +275,13 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-square rounded-lg overflow-hidden shadow-2xl">
-                <img 
-                  src={getImagePath('/images/profile.jpg')} 
-                  alt="Chandana Gutta" 
+                <img
+                  src={getImagePath('/images/profile.jpg')}
+                  alt="Chandana Gutta"
                   className="w-full h-full object-cover"
                 />
               </div>
-              <motion.div 
+              <motion.div
                 className="absolute -bottom-8 -right-8 bg-blue-600 text-white p-4 rounded-lg shadow-xl"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -319,7 +322,7 @@ export default function Home() {
                       {visibleProject === index ? 'Show less' : 'Show more'}
                       <ChevronRightIcon className={`h-4 w-4 ml-1 transition-transform ${visibleProject === index ? 'rotate-90' : ''}`} />
                     </button>
-                    
+
                     <AnimatePresence>
                       {visibleProject === index && (
                         <motion.ul
@@ -347,7 +350,7 @@ export default function Home() {
       {/* Skills Section with Advanced Animation */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
@@ -356,68 +359,29 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+              My diverse skill set spans technical tools, professional expertise, and industry certifications.
+              Explore the interactive visualization below to see how my skills complement each other.
+            </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {Object.keys(skills).map((tab) => (
-              <motion.button
-                key={tab}
-                onClick={() => setActiveSkillTab(tab)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-6 py-2 rounded-full transition-all text-lg ${
-                  activeSkillTab === tab
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-white text-gray-600 hover:bg-gray-100 shadow'
-                }`}
-              >
-                {tab.charAt(0).toUpperCase() + tab.slice(1)}
-              </motion.button>
-            ))}
-          </div>
-
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeSkillTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="grid grid-cols-1 gap-6">
-                {skills[activeSkillTab].map((skill, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-                      <span className="text-gray-800 font-medium text-lg">{skill.name}</span>
-                      <span className="text-blue-600 font-medium">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                        className="h-2.5 rounded-full bg-gradient-to-r from-blue-400 to-blue-600"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </AnimatePresence>
+          {/* Skill Category Visualization */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl mx-auto"
+          >
+            <SkillCategoryVisualization skills={skills} categories={skillCategories} />
+          </motion.div>
         </div>
       </section>
 
       {/* Featured Projects */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             variants={fadeIn}
             initial="hidden"
             whileInView="visible"
@@ -427,7 +391,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Projects</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Here are some of the significant projects I'm currently managing. Each project presents unique 
+              Here are some of the significant projects I'm currently managing. Each project presents unique
               challenges requiring specialized solutions in building envelope systems and structural rehabilitation.
             </p>
           </motion.div>
@@ -444,7 +408,7 @@ export default function Home() {
                 className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 <div className="h-56 relative overflow-hidden">
-                  <div 
+                  <div
                     className="w-full h-full bg-blue-100 group-hover:scale-110 transition-transform duration-700"
                     style={{
                     backgroundImage: `url(${getImagePath(project.image)})`,
@@ -453,14 +417,14 @@ export default function Home() {
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
+
                   {project.budget && (
                     <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm shadow-lg">
                       Budget: {project.budget}
                     </div>
                   )}
                 </div>
-                
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                     {project.name}
@@ -481,8 +445,8 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -513,7 +477,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold mb-6">Ready to Collaborate?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              I'm open to discussing project collaborations, construction technology, 
+              I'm open to discussing project collaborations, construction technology,
               and sustainable building practices. Let's connect!
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
