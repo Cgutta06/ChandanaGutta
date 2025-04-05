@@ -352,11 +352,12 @@ export default function Portfolio() {
       </Head>
 
       {/* Header Section */}
-      <section className="relative py-24 bg-gradient-to-r from-blue-800/70 to-gray-800/70 text-white">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+      <section className="relative py-24 bg-gradient-to-r from-blue-800/20 to-gray-800/20 text-white">
+        {/* Lighter gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-overlay"
-          style={{ backgroundImage: `url(${getImagePath('/images/portfolio-bg.jpg')})` }}  
+          className="absolute inset-0 bg-cover bg-center opacity-75"
+          style={{ backgroundImage: `url(${getImagePath('/images/portfolio-bg.jpg')})` }}
         ></div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -365,7 +366,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-bold mb-6"
+              className="text-5xl font-bold mb-6 text-shadow-lg"
             >
               My Portfolio
             </motion.h1>
@@ -373,7 +374,7 @@ export default function Portfolio() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl text-gray-300 mb-8"
+              className="text-xl text-gray-100 mb-8 text-shadow"
             >
               A collection of my work in building envelope commissioning, 
               project management, and architectural design.
@@ -588,4 +589,9 @@ export default function Portfolio() {
     </>
   );
 }
+
+
+
+
+
 

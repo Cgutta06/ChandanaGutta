@@ -224,10 +224,11 @@ export default function Experience() {
       </Head>
 
       {/* Header Section */}
-      <section className="relative py-24 bg-gradient-to-r from-blue-800/70 to-gray-800/70 text-white">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+      <section className="relative py-24 bg-gradient-to-r from-blue-800/40 to-gray-800/40 text-white">
+        {/* Darker gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-overlay"
+          className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{ backgroundImage: `url(${getImagePath('/images/experience-bg.jpg')})` }}
         ></div>
         
@@ -237,18 +238,17 @@ export default function Experience() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-5xl font-bold mb-6"
+              className="text-5xl font-bold mb-6 text-shadow-lg"
             >
-              My Experience
+              Professional Experience
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl text-gray-300 mb-8"
+              className="text-xl text-gray-100 mb-8 text-shadow"
             >
-              Professional journey, education, and specialized skills in building 
-              envelope systems and project management.
+              A journey through my professional growth and achievements
             </motion.p>
           </div>
         </div>
@@ -575,3 +575,6 @@ export default function Experience() {
     </>
   );
 }
+
+
+
