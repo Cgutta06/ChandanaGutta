@@ -10,6 +10,7 @@ import {
   ExclamationCircleIcon
 } from '@heroicons/react/24/outline';
 import { getImagePath } from '../utils/path-utils';
+// replaced picture
 
 export default function Contact() {
   const [formData, setFormData] = useState({
