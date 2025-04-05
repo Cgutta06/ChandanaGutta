@@ -352,10 +352,10 @@ export default function Portfolio() {
       </Head>
 
       {/* Header Section */}
-      <section className="relative py-24 bg-gradient-to-r from-blue-900 to-gray-900 text-white">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+      <section className="relative py-24 bg-gradient-to-r from-blue-800/70 to-gray-800/70 text-white">
+        <div className="absolute inset-0 bg-black opacity-30"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
+          className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-overlay"
           style={{ backgroundImage: `url(${getImagePath('/images/portfolio-bg.jpg')})` }}  
         ></div>
         
@@ -588,3 +588,4 @@ export default function Portfolio() {
     </>
   );
 }
+

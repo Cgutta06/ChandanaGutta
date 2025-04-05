@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { DocumentIcon } from '@heroicons/react/24/outline';
-import { getImagePath } from '../utils/path-utils';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,7 +46,7 @@ const Navigation = () => {
               whileHover={{ scale: 1.1 }}
               className="text-2xl font-bold text-white cursor-pointer group"
             >
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Chandana Gutta</span>
+              <span className="text-white">Chandana Gutta</span>
             </motion.span>
           </Link>
 

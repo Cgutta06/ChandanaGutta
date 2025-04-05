@@ -31,11 +31,39 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus('success');
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '339c486e-f461-42fb-ae78-d5fc48bbcb84',
+          ...formData,
+          subject: `New contact from ${formData.name}: ${formData.subject}`,
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setFormStatus('success');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus('error');
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -318,10 +346,12 @@ export default function Contact() {
                       exit={{ opacity: 0 }}
                       className="mt-6 p-4 bg-red-50 border border-red-100 rounded-lg flex items-start"
                     >
-                      <ExclamationCircleIcon className="h-5 w-5 text-red-500 mr-3 flex-shrink-0 mt-0.5" />
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-500 mr-3 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                      </svg>
                       <div>
-                        <h3 className="text-red-800 font-medium">Something went wrong</h3>
-                        <p className="text-red-700 text-sm">Please try again or contact me directly via email.</p>
+                        <h3 className="text-red-800 font-medium">Failed to send message</h3>
+                        <p className="text-red-700 text-sm">Please try again later or contact me directly via email.</p>
                       </div>
                     </motion.div>
                   )}
