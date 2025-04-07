@@ -88,7 +88,7 @@ const SkillCategoryVisualization = ({ skills, categories }) => {
       </div>
 
       {/* Skill Visualization */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div
           key={activeCategory || 'all'}
           variants={containerVariants}
