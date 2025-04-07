@@ -103,25 +103,22 @@ export default function Home() {
   // Projects data from resume
   const projects = [
     {
-      name: "Stonebridge Condominium",
-      description: "Comprehensive building envelope rehabilitation project addressing water infiltration and structural issues in a multi-unit residential complex.",
-      budget: "$6M",
-      type: "Building Envelope",
-      image: "/images/stonebridge.jpg"
+      name: "Hospital Tower Envelope Performance",
+      description: "Comprehensive water infiltration testing at the MetroHealth Apex facility to validate the exterior envelope system, focusing on curtain wall assembly.",
+      type: "Testing & Validation",
+      image: "/images/portfolio/hospital-tower-1.jpg"
     },
     {
-      name: "Cashelmara Condominium",
-      description: "Historic building restoration with focus on maintaining architectural integrity while implementing modern waterproofing and structural reinforcement solutions.",
-      budget: "$3M",
-      type: "Historic Restoration",
-      image: "/images/cashelmara.jpg"
+      name: "Building Envelope Air Leakage Testing",
+      description: "Comprehensive air leakage testing at the Ashley Courthouse Annex building with preparations handled by the contractor and their subcontractors.",
+      type: "Testing & Validation",
+      image: "/images/portfolio/air-leakage-1.jpg"
     },
     {
-      name: "Park Building",
-      description: "Commercial and residential mixed-use building renovation with focus on structural rehabilitation, ADA compliance, and energy efficiency improvements.",
-      budget: "$1.5M",
-      type: "Commercial/Residential",
-      image: "/images/parkbuilding.jpg"
+      name: "Quality Assurance & Project Management",
+      description: "Specialized construction quality assurance and comprehensive project management for condominium renovations and multiple construction projects.",
+      type: "Project Management",
+      image: "/images/portfolio/condo-qa-1.jpg"
     }
   ];
 
@@ -418,11 +415,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {project.budget && (
-                    <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm shadow-lg">
-                      Budget: {project.budget}
-                    </div>
-                  )}
+                  {/* Budget tag removed as requested */}
                 </div>
 
                 <div className="p-6">
@@ -490,7 +483,7 @@ export default function Home() {
                   Contact Me
                 </motion.button>
               </Link>
-              <a href="/ChandanaGutta/ChandanaGutta_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="/ChandanaGutta_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
                   whileTap={{ scale: 0.95 }}

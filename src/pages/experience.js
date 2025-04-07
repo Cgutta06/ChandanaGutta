@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
-import Link from 'next/link';
-import { 
-  AcademicCapIcon, 
-  BriefcaseIcon, 
-  BuildingOffice2Icon,
+import {
+  AcademicCapIcon,
+  BriefcaseIcon,
   DocumentTextIcon,
   ChevronDownIcon,
   ChevronRightIcon,
@@ -227,14 +225,14 @@ export default function Experience() {
       <section className="relative py-24 bg-gradient-to-r from-blue-800/40 to-gray-800/40 text-white">
         {/* Darker gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{ backgroundImage: `url(${getImagePath('/images/experience-bg.jpg')})` }}
         ></div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -242,13 +240,13 @@ export default function Experience() {
             >
               Professional Experience
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl text-gray-100 mb-8 text-shadow"
             >
-              A journey through my professional growth and achievements
+              Beyond buildings: My journey through envelope integrity, project execution, and architectural vision
             </motion.p>
           </div>
         </div>
@@ -318,9 +316,9 @@ export default function Experience() {
                               <h3 className="text-2xl font-bold text-gray-900">{experience.role}</h3>
                               <div className="flex items-center mt-2">
                                 {experience.logo && (
-                                  <img 
-                                    src={experience.logo} 
-                                    alt={experience.company} 
+                                  <img
+                                    src={experience.logo}
+                                    alt={experience.company}
                                     className="w-8 h-8 mr-2 rounded-full object-contain bg-gray-100"
                                   />
                                 )}
@@ -332,7 +330,7 @@ export default function Experience() {
                               <p className="text-gray-500">{experience.location}</p>
                             </div>
                           </div>
-                          
+
                           <p className="text-gray-700 my-4 border-l-4 border-blue-200 pl-3">
                             {experience.description}
                           </p>
@@ -340,16 +338,16 @@ export default function Experience() {
                           <div className="mt-6">
                             {experience.responsibilities.map((section, sectionIndex) => (
                               <div key={sectionIndex} className="mb-6">
-                                <button 
+                                <button
                                   onClick={() => setExpandedItem(expandedItem === `${experience.id}-${sectionIndex}` ? null : `${experience.id}-${sectionIndex}`)}
                                   className="flex justify-between items-center w-full text-left font-semibold text-gray-800 hover:text-blue-600 transition-colors"
                                 >
                                   <span>{section.category}</span>
-                                  <ChevronDownIcon 
-                                    className={`h-5 w-5 transition-transform ${expandedItem === `${experience.id}-${sectionIndex}` ? 'rotate-180' : ''}`} 
+                                  <ChevronDownIcon
+                                    className={`h-5 w-5 transition-transform ${expandedItem === `${experience.id}-${sectionIndex}` ? 'rotate-180' : ''}`}
                                   />
                                 </button>
-                                
+
                                 <AnimatePresence>
                                   {expandedItem === `${experience.id}-${sectionIndex}` && (
                                     <motion.ul
@@ -368,7 +366,7 @@ export default function Experience() {
                                     </motion.ul>
                                   )}
                                 </AnimatePresence>
-                                
+
                                 <div className="mt-2 border-b border-gray-100"></div>
                               </div>
                             ))}
@@ -409,9 +407,9 @@ export default function Experience() {
                               </div>
                               <div className="flex items-center">
                                 {education.logo && (
-                                  <img 
-                                    src={education.logo} 
-                                    alt={education.institution} 
+                                  <img
+                                    src={education.logo}
+                                    alt={education.institution}
                                     className="w-8 h-8 mr-2 rounded object-contain bg-gray-100"
                                   />
                                 )}
@@ -426,7 +424,7 @@ export default function Experience() {
                               )}
                             </div>
                           </div>
-                          
+
                           <div className="mt-6">
                             <h4 className="font-semibold text-gray-800 mb-3">Key Coursework:</h4>
                             <div className="grid sm:grid-cols-2 gap-2">
@@ -463,7 +461,7 @@ export default function Experience() {
                     className="bg-white rounded-xl shadow-lg p-8 mb-8"
                   >
                     <h3 className="text-2xl font-bold text-gray-900 mb-6">Technical Expertise</h3>
-                    
+
                     <div className="grid md:grid-cols-2 gap-8">
                       {skillsData.technical.map((category, index) => (
                         <div key={index}>
@@ -490,7 +488,7 @@ export default function Experience() {
                     className="bg-white rounded-xl shadow-lg p-8 mb-8"
                   >
                     <h3 className="text-2xl font-bold text-gray-900 mb-6">Certifications</h3>
-                    
+
                     <div className="grid sm:grid-cols-2 gap-4">
                       {skillsData.certifications.map((cert, index) => (
                         <motion.div
@@ -517,7 +515,7 @@ export default function Experience() {
                     className="bg-white rounded-xl shadow-lg p-8"
                   >
                     <h3 className="text-2xl font-bold text-gray-900 mb-6">Core Competencies</h3>
-                    
+
                     <div className="flex flex-wrap gap-3">
                       {skillsData.competencies.map((competency, index) => (
                         <motion.div
@@ -549,13 +547,13 @@ export default function Experience() {
           >
             <h2 className="text-3xl font-bold mb-6">Want to see my full resume?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Download my detailed resume for a complete overview of my qualifications, 
+              Download my detailed resume for a complete overview of my qualifications,
               experience, and achievements.
             </p>
             <div className="flex justify-center">
-              <a 
-                href="/ChandanaGutta/ChandanaGutta_Resume.pdf" 
-                target="_blank" 
+              <a
+                href="/ChandanaGutta_Resume.pdf"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
               >

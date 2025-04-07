@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
-import { 
-  ChevronRightIcon, 
-  ArrowTopRightOnSquareIcon,
+import {
+  ChevronRightIcon,
   BuildingOffice2Icon,
   HomeModernIcon,
   BuildingLibraryIcon,
@@ -59,7 +58,8 @@ export default function Portfolio() {
       additionalImages: [
         "/images/portfolio/air-leakage-2.jpg",
         "/images/portfolio/air-leakage-3.jpg",
-        "/images/portfolio/air-leakage-4.jpg"
+        "/images/portfolio/air-leakage-4.jpg",
+        "/images/portfolio/air-leakage-5.jpg"
       ],
       budget: "Confidential",
       date: "2023",
@@ -105,7 +105,8 @@ export default function Portfolio() {
       additionalImages: [
         "/images/portfolio/lakefront-condo-2.jpg",
         "/images/portfolio/lakefront-condo-3.jpg",
-        "/images/portfolio/lakefront-condo-4.jpg"
+        "/images/portfolio/lakefront-condo-4.jpg",
+        "/images/portfolio/lakefront-condo-5.jpg"
       ],
       budget: "$500K",
       date: "2023",
@@ -151,7 +152,8 @@ export default function Portfolio() {
       additionalImages: [
         "/images/portfolio/garage-inspection-2.jpg",
         "/images/portfolio/garage-inspection-3.jpg",
-        "/images/portfolio/garage-inspection-4.jpg"
+        "/images/portfolio/garage-inspection-4.jpg",
+        "/images/portfolio/garage-inspection-5.jpg"
       ],
       budget: "Confidential",
       date: "2022",
@@ -167,145 +169,40 @@ export default function Portfolio() {
     },
     {
       id: 7,
-      title: "Quality Assurance for Condominium Renovation",
-      description: "Specialized construction quality assurance consulting for the renovation of a 37-unit condominium complex originally developed in 1986.",
-      longDescription: "We provide specialized construction quality assurance consulting for the renovation of a 37-unit condominium complex originally developed in 1986. Our team has been engaged to oversee the replacement of cedar siding systems and auxiliary components, including gutters, downspouts, and trim. We identify critical contract oversights, including the absence of provisions for replacement of deteriorated roof sheathing, costs for framing or structural member replacements, and other miscellaneous replacements that may be uncovered. We recommend negotiating these items with contractors and establishing tracking methods to manage unexpected discoveries effectively. As the project advances, our team conducts progressive inspections of flashing components and rooftop penetrations, including soil stacks, adjoining walls, skylights, and chimneys, to ensure comprehensive quality control throughout the renovation process.",
+      title: "Quality Assurance & Project Management",
+      description: "Specialized construction quality assurance and comprehensive project management for condominium renovations and multiple construction projects.",
+      longDescription: "We provide specialized construction quality assurance consulting for the renovation of a 37-unit condominium complex originally developed in 1986, while also offering expert project management services across a variety of construction and renovation projects. For the condominium renovation, our team oversees the replacement of cedar siding systems and auxiliary components, including gutters, downspouts, and trim. We identify critical contract oversights, including the absence of provisions for replacement of deteriorated roof sheathing, costs for framing or structural member replacements, and other miscellaneous replacements that may be uncovered. Our approach includes establishing effective tracking methods for managing unexpected discoveries, conducting progressive inspections of key building components, and ensuring comprehensive quality control throughout the construction process. We focus on proactive problem-solving, stakeholder coordination, and maintaining strict adherence to project timelines and budgets while ensuring all work meets or exceeds industry standards.",
       image: "/images/portfolio/condo-qa-1.jpg",
       additionalImages: [
         "/images/portfolio/condo-qa-2.jpg",
         "/images/portfolio/condo-qa-3.jpg",
-        "/images/portfolio/condo-qa-4.jpg"
-      ],
-      budget: "Confidential",
-      date: "2023 - Present",
-      location: "Cleveland, OH",
-      category: "residential",
-      technologies: ["Quality Assurance", "Construction Oversight", "Contract Analysis", "Inspection Services"],
-      highlights: [
-        "Oversee replacement of cedar siding systems and auxiliary components",
-        "Identify critical contract oversights and recommendation solutions",
-        "Establish tracking methods for managing unexpected discoveries",
-        "Conduct progressive inspections of flashing components and rooftop penetrations"
-      ]
-    },
-    {
-      id: 8,
-      title: "Project Management Expertise",
-      description: "Comprehensive project management services including contract oversight, quality control, and coordination across multiple construction projects.",
-      longDescription: "We provide expert project management services across a variety of construction and renovation projects. Our approach includes identifying critical contract oversights, establishing effective tracking methods for managing unexpected discoveries, conducting progressive inspections of key building components, and ensuring comprehensive quality control throughout the construction process. We focus on proactive problem-solving, stakeholder coordination, and maintaining strict adherence to project timelines and budgets while ensuring all work meets or exceeds industry standards.",
-      image: "/images/portfolio/project-mgmt-1.jpg",
-      additionalImages: [
+        "/images/portfolio/condo-qa-4.jpg",
+        "/images/portfolio/project-mgmt-1.jpg",
         "/images/portfolio/project-mgmt-2.jpg",
         "/images/portfolio/project-mgmt-3.jpg",
         "/images/portfolio/project-mgmt-4.jpg"
       ],
       budget: "Varied",
-      date: "Ongoing",
+      date: "2023 - Present",
       location: "Cleveland, OH",
       category: "management",
-      technologies: ["Project Management", "Quality Control", "Contract Administration", "Stakeholder Coordination"],
+      technologies: ["Quality Assurance", "Project Management", "Construction Oversight", "Contract Analysis", "Inspection Services", "Stakeholder Coordination"],
       highlights: [
-        "Oversee multiple construction projects simultaneously",
-        "Implement effective tracking methods for project milestones",
+        "Oversee replacement of cedar siding systems and auxiliary components",
+        "Identify critical contract oversights and recommend solutions",
+        "Establish tracking methods for managing unexpected discoveries",
+        "Conduct progressive inspections of flashing components and rooftop penetrations",
         "Coordinate between contractors, clients, and regulatory authorities",
         "Ensure adherence to project specifications and quality standards"
       ]
     },
-    {
-      id: 9,
-      title: "Stonebridge Condominium",
-      description: "Comprehensive building envelope rehabilitation project addressing water infiltration and structural issues in a multi-unit residential complex.",
-      longDescription: "Led the rehabilitation of Stonebridge Condominium's building envelope, a complex project involving extensive waterproofing solutions, structural repairs, and facade restoration. The project required coordination with multiple stakeholders including the condominium board, residents, and specialized contractors. Implemented standardized waterproofing solutions which increased consistency across the building and reduced rework by 20%.",
-      image: "/images/stonebridge.jpg",
-      additionalImages: [],
-      budget: "$6M",
-      date: "2023 - Present",
-      location: "Cleveland, OH",
-      category: "residential",
-      technologies: ["ASTM E1105 Testing", "Waterproofing", "Structural Repairs", "Facade Restoration"],
-      highlights: [
-        "Reduced project timeline by 15% through implementation of standardized testing protocols",
-        "Developed custom waterproofing solutions for critical problem areas",
-        "Coordinated with 7 specialized contractors to ensure seamless project execution",
-        "Maintained resident satisfaction through transparent communication during disruptions"
-      ]
-    },
-    {
-      id: 10,
-      title: "Cashelmara Condominium",
-      description: "Historic 11-story building restoration with focus on preserving architectural integrity while implementing modern waterproofing and structural reinforcement solutions.",
-      longDescription: "The Cashelmara Condominium project involved the restoration of a historic 11-story building with strict preservation requirements. As project manager, I led the documentation of existing conditions, development of restoration approaches, and coordination with historical preservation authorities. The project successfully balanced historic authenticity with modern performance requirements.",
-      image: "/images/cashelmara.jpg",
-      additionalImages: [],
-      budget: "$3M",
-      date: "2023 - Present",
-      location: "Cleveland, OH",
-      category: "historic",
-      technologies: ["Historic Preservation", "Structural Reinforcement", "Facade Restoration", "AAMA 501.2 Testing"],
-      highlights: [
-        "Ensured compliance with historical preservation requirements while upgrading building performance",
-        "Implemented data-driven decision making for diagnostics with 12% improvement in accuracy",
-        "Developed documentation protocols for historic elements to guide restoration process",
-        "Coordinated with preservation authorities to secure necessary approvals"
-      ]
-    },
-    {
-      id: 11,
-      title: "Park Building",
-      description: "Commercial and residential mixed-use building renovation focusing on structural rehabilitation, ADA compliance, and energy efficiency improvements.",
-      longDescription: "The Park Building project represents a comprehensive approach to mixed-use building renovation. The scope included structural rehabilitation, envelope improvements, and accessibility upgrades. The project required careful planning and phasing to minimize disruption to current tenants while implementing significant improvements throughout the structure.",
-      image: "/images/parkbuilding.jpg",
-      additionalImages: [],
-      budget: "$1.5M",
-      date: "2023 - Present",
-      location: "Cleveland, OH",
-      category: "commercial",
-      technologies: ["ADA Compliance", "Energy Efficiency", "Structural Rehabilitation", "Building Envelope Assessment"],
-      highlights: [
-        "Coordinated phased implementation to allow continued building occupancy during renovation",
-        "Identified and addressed critical structural issues in early project phases",
-        "Implemented energy efficiency improvements resulting in 18% estimated energy savings",
-        "Achieved full ADA compliance through strategic accessibility modifications"
-      ]
-    },
-    {
-      id: 12,
-      title: "Two-Story Residential Projects",
-      description: "Management of multiple residential projects from concept to completion, with focus on client satisfaction and sustainable design elements.",
-      longDescription: "During my time as a Junior Architect at AN Architect, I managed three two-story residential projects simultaneously. Each project required unique design solutions, client coordination, and construction oversight. I implemented sustainable building features that reduced energy consumption by approximately 25% compared to conventional designs.",
-      image: "/images/residential-projects.jpg",
-      additionalImages: [],
-      budget: "Varied",
-      date: "2019 - 2021",
-      location: "Bengaluru, India",
-      category: "residential",
-      technologies: ["Sustainable Design", "Residential Architecture", "Construction Documentation", "Site Supervision"],
-      highlights: [
-        "Simultaneously managed 3 residential projects while meeting all client requirements",
-        "Implemented sustainable features reducing energy consumption by 25%",
-        "Coordinated with MEP and structural engineers to resolve technical conflicts",
-        "Conducted regular site inspections ensuring construction quality and specification adherence"
-      ]
-    },
-    {
-      id: 13,
-      title: "20-Story Residential Tower",
-      description: "Visualization and material specification for a high-rise residential tower, focusing on modern design elements and efficient space utilization.",
-      longDescription: "Contributed to the design and documentation of a 20-story residential tower in Bengaluru, delivering visualization and material specification from concept to completion. The project focused on modern aesthetics, optimized space utilization, and integration of community amenities. My role involved creating detailed renderings, material specifications, and coordination with the design team.",
-      image: "/images/high-rise.jpg",
-      additionalImages: [],
-      budget: "Confidential",
-      date: "2020 - 2021",
-      location: "Bengaluru, India",
-      category: "high-rise",
-      technologies: ["High-rise Design", "3D Visualization", "Material Specification", "Space Planning"],
-      highlights: [
-        "Created photorealistic renderings that secured client approval for design concept",
-        "Developed comprehensive material specifications balancing aesthetics and durability",
-        "Optimized unit layouts to maximize space efficiency in a dense urban environment",
-        "Collaborated with senior architects to refine design concepts and technical documentation"
-      ]
-    }
+    /* Projects removed as requested:
+       - Stonebridge Condominium
+       - Cashelmara Condominium
+       - Park Building
+       - Two-Story Residential Projects
+       - 20-Story Residential Tower
+    */
   ];
 
   // Filter categories
@@ -320,16 +217,16 @@ export default function Portfolio() {
   ];
 
   // Filter projects based on active filter
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => project.category === activeFilter);
 
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.1
       }
     }
@@ -337,8 +234,8 @@ export default function Portfolio() {
 
   const itemVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: { duration: 0.5 }
     }
@@ -355,14 +252,14 @@ export default function Portfolio() {
       <section className="relative py-24 bg-gradient-to-r from-blue-800/20 to-gray-800/20 text-white">
         {/* Lighter gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-75"
           style={{ backgroundImage: `url(${getImagePath('/images/portfolio-bg.jpg')})` }}
         ></div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -370,13 +267,13 @@ export default function Portfolio() {
             >
               My Portfolio
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl text-gray-100 mb-8 text-shadow"
             >
-              A collection of my work in building envelope commissioning, 
+              A collection of my work in building envelope commissioning,
               project management, and architectural design.
             </motion.p>
           </div>
@@ -429,7 +326,7 @@ export default function Portfolio() {
                   className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   <div className="h-64 relative overflow-hidden">
-                    <div 
+                    <div
                       className="w-full h-full bg-blue-100 hover:scale-110 transition-transform duration-700"
                       style={{
                         backgroundImage: `url(${getImagePath(project.image)})`,
@@ -438,20 +335,16 @@ export default function Portfolio() {
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                    
-                    {project.budget && (
-                      <div className="absolute top-3 right-3 bg-blue-600 text-white px-3 py-1 rounded-full text-sm shadow-lg">
-                        Budget: {project.budget}
-                      </div>
-                    )}
-                    
+
+                    {/* Budget tag removed as requested */}
+
                     <div className="absolute top-3 left-3">
                       <span className="bg-black/70 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
                         {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
                       </span>
                     </div>
                   </div>
-                  
+
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
@@ -459,11 +352,11 @@ export default function Portfolio() {
                       </h3>
                       <span className="text-sm text-gray-500">{project.date}</span>
                     </div>
-                    
+
                     <p className="text-gray-600 mb-6">
                       {project.description}
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.slice(0, 3).map((tech, index) => (
                         <span key={index} className="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-xs font-medium">
@@ -476,7 +369,7 @@ export default function Portfolio() {
                         </span>
                       )}
                     </div>
-                    
+
                     <button
                       onClick={() => setVisibleProject(visibleProject === project.id ? null : project.id)}
                       className="text-blue-600 hover:text-blue-800 font-medium flex items-center group"
@@ -484,7 +377,7 @@ export default function Portfolio() {
                       {visibleProject === project.id ? 'Show Less' : 'Project Details'}
                       <ChevronRightIcon className={`h-5 w-5 ml-1 transition-transform group-hover:translate-x-1 ${visibleProject === project.id ? 'rotate-90' : ''}`} />
                     </button>
-                    
+
                     <AnimatePresence>
                       {visibleProject === project.id && (
                         <motion.div
@@ -495,7 +388,7 @@ export default function Portfolio() {
                           className="mt-4 pt-4 border-t border-gray-100 overflow-hidden"
                         >
                           <p className="text-gray-700 mb-4">{project.longDescription}</p>
-                          
+
                           {/* Image Gallery - only show if there are additional images */}
                           {project.additionalImages && project.additionalImages.length > 0 && (
                             <div className="mb-6">
@@ -503,7 +396,7 @@ export default function Portfolio() {
                               <div className="grid grid-cols-2 gap-2">
                                 {project.additionalImages.map((img, idx) => (
                                   <div key={idx} className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden">
-                                    <div 
+                                    <div
                                       className="w-full h-full bg-blue-100"
                                       style={{
                                         backgroundImage: `url(${getImagePath(img)})`,
@@ -516,20 +409,17 @@ export default function Portfolio() {
                               </div>
                             </div>
                           )}
-                          
+
                           <h4 className="font-semibold text-gray-900 mb-2">Key Highlights:</h4>
                           <ul className="list-disc list-inside space-y-1 text-gray-600 mb-4">
                             {project.highlights.map((highlight, idx) => (
                               <li key={idx} className="text-sm">{highlight}</li>
                             ))}
                           </ul>
-                          
+
                           <div className="flex justify-between items-center">
                             <span className="text-sm text-gray-500">{project.location}</span>
-                            <Link href={`/portfolio/${project.id}`} className="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800">
-                              Full Case Study 
-                              <ArrowTopRightOnSquareIcon className="h-4 w-4 ml-1" />
-                            </Link>
+                            {/* Full Case Study link removed as requested */}
                           </div>
                         </motion.div>
                       )}
@@ -539,7 +429,7 @@ export default function Portfolio() {
               ))}
             </AnimatePresence>
           </motion.div>
-          
+
           {filteredProjects.length === 0 && (
             <div className="text-center py-16">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">No projects found</h3>
@@ -548,7 +438,7 @@ export default function Portfolio() {
           )}
         </div>
       </section>
-      
+
       {/* Contact CTA */}
       <section className="py-20 bg-blue-900 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -560,7 +450,7 @@ export default function Portfolio() {
           >
             <h2 className="text-3xl font-bold mb-6">Interested in Working Together?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how my expertise in building envelope systems and project management 
+              Let's discuss how my expertise in building envelope systems and project management
               can contribute to the success of your next project.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

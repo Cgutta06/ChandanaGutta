@@ -42,7 +42,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/">
-            <motion.span 
+            <motion.span
               whileHover={{ scale: 1.1 }}
               className="text-2xl font-bold text-white cursor-pointer group"
             >
@@ -78,7 +78,7 @@ const Navigation = () => {
 
           {/* Resume Button */}
           <motion.a
-            href="/ChandanaGutta/ChandanaGutta_Resume.pdf"
+            href="/ChandanaGutta_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -143,7 +143,7 @@ const Navigation = () => {
               </Link>
             ))}
             <a
-              href="/ChandanaGutta/ChandanaGutta_Resume.pdf"
+              href="/ChandanaGutta_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-white hover:text-blue-400 transition-colors"

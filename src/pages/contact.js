@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
-import { 
-  EnvelopeIcon, 
-  PhoneIcon, 
+import {
+  EnvelopeIcon,
+  PhoneIcon,
   MapPinIcon,
   CheckCircleIcon,
   ExclamationCircleIcon
@@ -30,7 +30,7 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -45,7 +45,7 @@ export default function Contact() {
       });
 
       const data = await response.json();
-      
+
       if (data.success) {
         setFormStatus('success');
         // Reset form
@@ -77,14 +77,14 @@ export default function Contact() {
       <section className="relative py-20 bg-gradient-to-r from-blue-800/40 to-gray-800/40 text-white">
         {/* Darker gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay"
           style={{ backgroundImage: `url(${getImagePath('/images/contact-bg.jpg')})` }}
         ></div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -92,13 +92,13 @@ export default function Contact() {
             >
               Let's Connect
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl text-gray-300 mb-8"
             >
-              Interested in discussing project collaborations, construction technology, 
+              Interested in discussing project collaborations, construction technology,
               or building envelope systems? I'd love to hear from you.
             </motion.p>
           </div>
@@ -119,14 +119,14 @@ export default function Contact() {
               >
                 <div className="h-32 bg-gradient-to-r from-blue-600 to-blue-800 relative">
                   {/* Contact image overlay */}
-                  <div 
+                  <div
                     className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay"
                     style={{ backgroundImage: `url(${getImagePath('/images/contact-image.jpg')})` }}
                   ></div>
                 </div>
                 <div className="relative px-8 py-10">
                   <div className="absolute -top-16 left-8 w-24 h-24 bg-white rounded-xl shadow-lg flex items-center justify-center">
-                    <img 
+                    <img
                       src={getImagePath('/images/profile.jpg')}
                       alt="Chandana Gutta"
                       className="w-20 h-20 object-cover rounded-lg"
@@ -134,7 +134,7 @@ export default function Contact() {
                   </div>
 
                   <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-6">Contact Information</h2>
-                  
+
                   <div className="space-y-6">
                     <div className="flex items-start">
                       <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
@@ -147,7 +147,7 @@ export default function Contact() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start">
                       <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                         <PhoneIcon className="h-5 w-5 text-blue-600" />
@@ -159,7 +159,7 @@ export default function Contact() {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start">
                       <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                         <MapPinIcon className="h-5 w-5 text-blue-600" />
@@ -171,7 +171,7 @@ export default function Contact() {
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start">
                       <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                         <svg className="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
@@ -180,9 +180,9 @@ export default function Contact() {
                       </div>
                       <div className="ml-4">
                         <h3 className="text-gray-500 text-sm">LinkedIn</h3>
-                        <a 
-                          href="https://www.linkedin.com/in/chandana-gutta/" 
-                          target="_blank" 
+                        <a
+                          href="https://www.linkedin.com/in/chandana-gutta/"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-gray-800 hover:text-blue-600 transition-colors inline-flex items-center"
                         >
@@ -194,7 +194,7 @@ export default function Contact() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="mt-10">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Open to discussing:</h3>
                     <ul className="space-y-2">
@@ -227,7 +227,7 @@ export default function Contact() {
                 className="bg-white rounded-2xl shadow-xl p-8"
               >
                 <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Me a Message</h2>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -244,7 +244,7 @@ export default function Contact() {
                       placeholder="John Doe"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                       Email Address
@@ -260,7 +260,7 @@ export default function Contact() {
                       placeholder="john@example.com"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                       Subject
@@ -276,7 +276,7 @@ export default function Contact() {
                       placeholder="How can we collaborate?"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       Message
@@ -292,14 +292,14 @@ export default function Contact() {
                       placeholder="Your message here..."
                     />
                   </div>
-                  
+
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     className={`w-full py-3 px-6 rounded-lg ${
-                      isSubmitting 
+                      isSubmitting
                         ? "bg-gray-400 cursor-not-allowed"
                         : "bg-blue-600 hover:bg-blue-700"
                     } text-white font-medium flex items-center justify-center transition-all`}
@@ -322,7 +322,7 @@ export default function Contact() {
                     )}
                   </motion.button>
                 </form>
-                
+
                 {/* Form Status Messages */}
                 <AnimatePresence>
                   {formStatus === 'success' && (
@@ -339,7 +339,7 @@ export default function Contact() {
                       </div>
                     </motion.div>
                   )}
-                  
+
                   {formStatus === 'error' && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
@@ -374,11 +374,11 @@ export default function Contact() {
           >
             <h2 className="text-3xl font-bold mb-6">Need more information?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              Download my detailed resume for a complete overview of my qualifications, 
+              Download my detailed resume for a complete overview of my qualifications,
               experience, and achievements.
             </p>
             <motion.a
-              href="/ChandanaGutta/ChandanaGutta_Resume.pdf"
+              href="/ChandanaGutta_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}
