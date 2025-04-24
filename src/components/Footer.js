@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { getDocumentPath } from '../utils/path-utils';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -115,14 +114,12 @@ const Footer = () => {
           <p className="mt-2">
             <span className="relative inline-block">
               <span className="absolute w-full h-0.5 bg-blue-600 bottom-0 left-0 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-              <a
-                href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/view-resume"
                 className="hover:text-blue-400 transition-colors"
               >
-                Download Resume
-              </a>
+                View Resume
+              </Link>
             </span>
           </p>
         </div>

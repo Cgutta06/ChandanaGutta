@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
+import Link from 'next/link';
 import {
   AcademicCapIcon,
   BriefcaseIcon,
@@ -9,7 +10,7 @@ import {
   ChevronRightIcon,
   CheckBadgeIcon
 } from '@heroicons/react/24/outline';
-import { getImagePath, getDocumentPath } from '../utils/path-utils';
+import { getImagePath } from '../utils/path-utils';
 
 export default function Experience() {
   const [activeTab, setActiveTab] = useState('professional');
@@ -551,10 +552,8 @@ export default function Experience() {
               experience, and achievements.
             </p>
             <div className="flex justify-center">
-              <a
-                href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/view-resume"
                 className="inline-flex items-center gap-2"
               >
                 <motion.button
@@ -563,9 +562,9 @@ export default function Experience() {
                   className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-full hover:bg-blue-50 transition-all text-lg font-medium"
                 >
                   <DocumentTextIcon className="h-6 w-6 mr-2" />
-                  Download Resume
+                  View Resume
                 </motion.button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

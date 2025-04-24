@@ -13,6 +13,7 @@ export function getImagePath(path) {
 
 export function getDocumentPath(path) {
   if (!path) return '';
+
   // If the path already starts with the base path, don't add it again
   if (path.startsWith(basePath)) return path;
   // If the path starts with a slash, add the base path

@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { DocumentIcon } from '@heroicons/react/24/outline';
-import { getDocumentPath } from '../utils/path-utils';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,17 +77,16 @@ const Navigation = () => {
           </div>
 
           {/* Resume Button */}
-          <motion.a
-            href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
-          >
-            <DocumentIcon className="h-5 w-5 mr-2" />
-            Resume
-          </motion.a>
+          <Link href="/view-resume">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden md:flex items-center bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
+            >
+              <DocumentIcon className="h-5 w-5 mr-2" />
+              Resume
+            </motion.button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
@@ -143,14 +141,12 @@ const Navigation = () => {
                 {label}
               </Link>
             ))}
-            <a
-              href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/view-resume"
               className="block text-white hover:text-blue-400 transition-colors"
             >
               Resume
-            </a>
+            </Link>
           </div>
         </motion.div>
       )}
