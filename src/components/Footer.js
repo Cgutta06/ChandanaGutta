@@ -116,7 +116,7 @@ const Footer = () => {
             <span className="relative inline-block">
               <span className="absolute w-full h-0.5 bg-blue-600 bottom-0 left-0 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
               <a
-                href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
+                href="/ChandanaGutta_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-400 transition-colors"

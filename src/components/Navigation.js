@@ -79,7 +79,7 @@ const Navigation = () => {
 
           {/* Resume Button */}
           <motion.a
-            href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
+            href="/ChandanaGutta_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
@@ -144,7 +144,7 @@ const Navigation = () => {
               </Link>
             ))}
             <a
-              href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
+              href="/ChandanaGutta_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-white hover:text-blue-400 transition-colors"
