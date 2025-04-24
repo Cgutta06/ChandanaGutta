@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
-import Link from 'next/link';
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -9,7 +8,7 @@ import {
   CheckCircleIcon,
   ExclamationCircleIcon
 } from '@heroicons/react/24/outline';
-import { getImagePath } from '../utils/path-utils';
+import { getImagePath, getDocumentPath } from '../utils/path-utils';
 // replaced picture
 
 export default function Contact() {
@@ -378,7 +377,7 @@ export default function Contact() {
               experience, and achievements.
             </p>
             <motion.a
-              href="/ChandanaGutta_Resume.pdf"
+              href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}

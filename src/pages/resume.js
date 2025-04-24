@@ -12,6 +12,7 @@ import {
   EnvelopeIcon,
   GlobeAltIcon
 } from '@heroicons/react/24/outline';
+import { getDocumentPath } from '../utils/path-utils';
 
 export default function Resume() {
   // Animation variants
@@ -19,7 +20,7 @@ export default function Resume() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
-  
+
   // Resume data from the resume PDF
   const personalInfo = {
     name: "Chandana Gutta",
@@ -29,9 +30,9 @@ export default function Resume() {
     linkedin: "www.linkedin.com/in/chandana-gutta",
     location: "Greater Cleveland, Ohio"
   };
-  
+
   const summary = `Detail-oriented Facilities Project Manager with proven experience managing complex construction projects up to $6M. Skilled in building envelope systems, structural restoration, and technical assessments with a unique combination of architectural training and hands-on construction management. Demonstrated ability to coordinate cross-functional teams, drive project execution, and deliver results in ambiguous environments.`;
-  
+
   const experiences = [
     {
       role: "Facilities Project Manager",
@@ -107,7 +108,7 @@ export default function Resume() {
       ]
     }
   ];
-  
+
   const education = [
     {
       degree: "Master of Science in Construction Management Technology",
@@ -136,7 +137,7 @@ export default function Resume() {
       ]
     }
   ];
-  
+
   const skills = {
     technical: [
       {
@@ -153,14 +154,14 @@ export default function Resume() {
       }
     ]
   };
-  
+
   const certifications = [
     "Tremco's Elastomeric Sealant Contractor Training",
     "OSHA 30-Hour Construction",
     "Willseal SWRI Training Program",
     "Procore Certified: Student"
   ];
-  
+
   const competencies = [
     "Ownership",
     "Think Big",
@@ -181,7 +182,7 @@ export default function Resume() {
         <title>Resume | Chandana Gutta</title>
         <meta name="description" content="Professional resume of Chandana Gutta - Facilities Project Manager, Building Envelope Commissioner, and Architect." />
       </Head>
-      
+
       <div className="bg-gray-50 py-12 min-h-screen">
         <div className="container mx-auto px-4">
           <motion.div
@@ -203,9 +204,9 @@ export default function Resume() {
                   <p className="text-blue-100 mt-2">{personalInfo.title}</p>
                 </div>
                 <div className="mt-4 md:mt-0 md:text-right">
-                  <a 
-                    href="/ChandanaGutta_Resume.pdf" 
-                    target="_blank" 
+                  <a
+                    href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors"
                   >
@@ -214,8 +215,8 @@ export default function Resume() {
                   </a>
                 </div>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 variants={fadeInUp}
                 className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6"
               >
@@ -233,7 +234,7 @@ export default function Resume() {
                 </a>
               </motion.div>
             </div>
-            
+
             {/* Summary */}
             <motion.div
               variants={fadeInUp}
@@ -242,7 +243,7 @@ export default function Resume() {
               <h2 className="text-xl font-bold text-gray-800 mb-3">Professional Summary</h2>
               <p className="text-gray-600 leading-relaxed">{summary}</p>
             </motion.div>
-            
+
             {/* Experience */}
             <motion.div
               variants={fadeInUp}
@@ -252,7 +253,7 @@ export default function Resume() {
                 <BriefcaseIcon className="h-6 w-6 mr-2 text-blue-600" />
                 Professional Experience
               </h2>
-              
+
               <div className="space-y-8">
                 {experiences.map((experience, index) => (
                   <motion.div
@@ -270,7 +271,7 @@ export default function Resume() {
                         <p>{experience.location}</p>
                       </div>
                     </div>
-                    
+
                     <div className="mt-3 space-y-3">
                       {experience.responsibilities.map((section, sectionIndex) => (
                         <div key={sectionIndex}>
@@ -290,7 +291,7 @@ export default function Resume() {
                 ))}
               </div>
             </motion.div>
-            
+
             {/* Education */}
             <motion.div
               variants={fadeInUp}
@@ -300,7 +301,7 @@ export default function Resume() {
                 <AcademicCapIcon className="h-6 w-6 mr-2 text-blue-600" />
                 Education
               </h2>
-              
+
               <div className="space-y-6">
                 {education.map((edu, index) => (
                   <div key={index} className="pl-4 border-l-2 border-blue-200">
@@ -315,7 +316,7 @@ export default function Resume() {
                         {edu.gpa && <p className="text-blue-600 font-medium">GPA: {edu.gpa}</p>}
                       </div>
                     </div>
-                    
+
                     <div className="mt-3">
                       <h4 className="font-semibold text-gray-700">Key Coursework:</h4>
                       <ul className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-1">
@@ -331,7 +332,7 @@ export default function Resume() {
                 ))}
               </div>
             </motion.div>
-            
+
             {/* Skills & Certifications */}
             <motion.div
               variants={fadeInUp}
@@ -341,15 +342,15 @@ export default function Resume() {
                 {/* Skills Section */}
                 <div>
                   <h2 className="text-xl font-bold text-gray-800 mb-4">Technical Skills</h2>
-                  
+
                   <div className="space-y-4">
                     {skills.technical.map((category, index) => (
                       <div key={index}>
                         <h3 className="font-semibold text-gray-700">{category.category}</h3>
                         <div className="mt-2 flex flex-wrap gap-2">
                           {category.skills.map((skill, skillIndex) => (
-                            <span 
-                              key={skillIndex} 
+                            <span
+                              key={skillIndex}
                               className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm"
                             >
                               {skill}
@@ -360,7 +361,7 @@ export default function Resume() {
                     ))}
                   </div>
                 </div>
-                
+
                 {/* Certifications Section */}
                 <div>
                   <h2 className="text-xl font-bold text-gray-800 mb-4">Certifications</h2>
@@ -372,12 +373,12 @@ export default function Resume() {
                       </li>
                     ))}
                   </ul>
-                  
+
                   <h2 className="text-xl font-bold text-gray-800 mt-6 mb-4">Core Competencies</h2>
                   <div className="flex flex-wrap gap-2">
                     {competencies.map((competency, index) => (
-                      <span 
-                        key={index} 
+                      <span
+                        key={index}
                         className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
                       >
                         {competency}
@@ -387,20 +388,20 @@ export default function Resume() {
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Footer */}
             <motion.div
               variants={fadeInUp}
               className="px-8 py-6 bg-gray-50 text-center"
             >
               <p className="text-gray-600">
-                Thank you for reviewing my resume. For a more interactive experience, please 
+                Thank you for reviewing my resume. For a more interactive experience, please
                 {' '}
                 <Link href="/" className="text-blue-600 hover:underline">
                   visit my portfolio
                 </Link>
                 {' '}
-                or 
+                or
                 {' '}
                 <Link href="/contact" className="text-blue-600 hover:underline">
                   contact me

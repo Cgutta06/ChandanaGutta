@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { getDocumentPath } from '../utils/path-utils';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -20,7 +21,7 @@ const Footer = () => {
               </motion.h2>
             </Link>
             <p className="text-gray-400 mb-6 pr-4">
-              Facilities Project Manager and Architect specializing in building envelope systems, 
+              Facilities Project Manager and Architect specializing in building envelope systems,
               combining design vision with practical project execution.
             </p>
             <div className="flex space-x-4">
@@ -55,7 +56,7 @@ const Footer = () => {
               </motion.a>
             </div>
           </div>
-          
+
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -82,7 +83,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           {/* Expertise */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Expertise</h3>
@@ -107,16 +108,16 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         {/* Bottom Section */}
         <div className="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
           <p>&copy; {currentYear} Chandana Gutta. All rights reserved.</p>
           <p className="mt-2">
             <span className="relative inline-block">
               <span className="absolute w-full h-0.5 bg-blue-600 bottom-0 left-0 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-              <a 
-                href="/ChandanaGutta_Resume.pdf" 
-                target="_blank" 
+              <a
+                href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-400 transition-colors"
               >
