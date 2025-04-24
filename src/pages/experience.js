@@ -552,8 +552,10 @@ export default function Experience() {
               experience, and achievements.
             </p>
             <div className="flex justify-center">
-              <Link
-                href="/view-resume"
+              <a
+                href="/ChandanaGutta_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
               >
                 <motion.button
@@ -562,9 +564,9 @@ export default function Experience() {
                   className="inline-flex items-center bg-white text-blue-900 px-8 py-4 rounded-full hover:bg-blue-50 transition-all text-lg font-medium"
                 >
                   <DocumentTextIcon className="h-6 w-6 mr-2" />
-                  View Resume
+                  Download Resume
                 </motion.button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

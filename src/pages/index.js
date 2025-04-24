@@ -483,15 +483,15 @@ export default function Home() {
                   Contact Me
                 </motion.button>
               </Link>
-              <Link href="/view-resume">
+              <a href="/ChandanaGutta_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white/10 transition-all text-lg font-medium"
                 >
-                  View Resume
+                  Download Resume
                 </motion.button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

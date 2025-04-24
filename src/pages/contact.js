@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
-import Link from 'next/link';
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -376,7 +375,7 @@ export default function Contact() {
               View my detailed resume for a complete overview of my qualifications,
               experience, and achievements.
             </p>
-            <Link href="/view-resume">
+            <a href="/ChandanaGutta_Resume.pdf" target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
@@ -385,9 +384,9 @@ export default function Contact() {
               <svg className="h-6 w-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              View Resume
+              Download Resume
               </motion.button>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
