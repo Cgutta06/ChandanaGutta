@@ -14,6 +14,11 @@ export function getImagePath(path) {
 export function getDocumentPath(path) {
   if (!path) return '';
 
+  // Special case for resume PDF - should be at root level in production
+  if (path.includes('ChandanaGutta_Resume.pdf')) {
+    return path.startsWith('/') ? path : `/${path}`;
+  }
+
   // If the path already starts with the base path, don't add it again
   if (path.startsWith(basePath)) return path;
   // If the path starts with a slash, add the base path
