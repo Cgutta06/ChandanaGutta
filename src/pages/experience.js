@@ -10,7 +10,7 @@ import {
   ChevronRightIcon,
   CheckBadgeIcon
 } from '@heroicons/react/24/outline';
-import { getImagePath } from '../utils/path-utils';
+import { getImagePath, getDocumentPath } from '../utils/path-utils';
 
 export default function Experience() {
   const [activeTab, setActiveTab] = useState('professional');
@@ -553,7 +553,7 @@ export default function Experience() {
             </p>
             <div className="flex justify-center">
               <a
-                href="/ChandanaGutta_Resume.pdf"
+                href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"

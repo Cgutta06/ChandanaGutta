@@ -7,7 +7,7 @@ import {
   MapPinIcon,
   CheckCircleIcon
 } from '@heroicons/react/24/outline';
-import { getImagePath } from '../utils/path-utils';
+import { getImagePath, getDocumentPath } from '../utils/path-utils';
 // replaced picture
 
 export default function Contact() {
@@ -375,7 +375,7 @@ export default function Contact() {
               View my detailed resume for a complete overview of my qualifications,
               experience, and achievements.
             </p>
-            <a href="/ChandanaGutta_Resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href={getDocumentPath("/ChandanaGutta_Resume.pdf")} target="_blank" rel="noopener noreferrer">
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}
                 whileTap={{ scale: 0.95 }}

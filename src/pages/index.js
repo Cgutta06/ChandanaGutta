@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { ArrowDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Head from 'next/head';
-import { getImagePath } from '../utils/path-utils';
+import { getImagePath, getDocumentPath } from '../utils/path-utils';
 import SkillCategoryVisualization from '../components/charts/SkillCategoryVisualization';
 import skillCategories from '../data/skillCategories';
 
@@ -483,7 +483,7 @@ export default function Home() {
                   Contact Me
                 </motion.button>
               </Link>
-              <a href="/ChandanaGutta_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href={getDocumentPath("/ChandanaGutta_Resume.pdf")} target="_blank" rel="noopener noreferrer">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
                   whileTap={{ scale: 0.95 }}
