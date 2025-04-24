@@ -376,7 +376,7 @@ export default function Contact() {
               experience, and achievements.
             </p>
             <a 
-              href={`${process.env.NODE_ENV === 'production' ? '/ChandanaGutta' : ''}/ChandanaGutta_Resume.pdf`} 
+              href="https://cgutta06.github.io/ChandanaGutta/ChandanaGutta_Resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
             >
