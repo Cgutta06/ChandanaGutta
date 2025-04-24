@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // This script ensures the resume PDF is copied to the correct locations in the output directory
+// IMPORTANT: The PDF must be at the root level of the GitHub Pages site
 console.log('Copying resume PDF to output directories...');
 
 // Define paths

@@ -205,7 +205,7 @@ export default function Resume() {
                 </div>
                 <div className="mt-4 md:mt-0 md:text-right">
                   <a
-                    href={getDocumentPath("/ChandanaGutta_Resume.pdf")}
+                    href="https://cgutta06.github.io/ChandanaGutta_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors"

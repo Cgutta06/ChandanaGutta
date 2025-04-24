@@ -35,9 +35,11 @@ jobs:
         run: |
           npm run build
           touch out/.nojekyll
-          # Also copy PDF to both locations
+          # Make sure the resume PDF is at the root level
+          cp public/ChandanaGutta_Resume.pdf out/
+          # Also copy PDF to the ChandanaGutta subpath
           mkdir -p out/ChandanaGutta
-          cp out/ChandanaGutta_Resume.pdf out/ChandanaGutta/
+          cp public/ChandanaGutta_Resume.pdf out/ChandanaGutta/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
