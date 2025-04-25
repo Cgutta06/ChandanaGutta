@@ -21,19 +21,25 @@
     return originalFetch.apply(this, arguments);
   };
   
-  // Fix PDF links - check if user is trying to access a PDF
-  const path = window.location.pathname;
-  if (path === '/ChandanaGutta_Resume.pdf') {
-    // Keep the PDF at the root level for GitHub Pages
-    console.log('Accessing root PDF');
-  } else if (path === '/ChandanaGutta/ChandanaGutta_Resume.pdf') {
-    // Ensure PDF is accessible from the ChandanaGutta subpath too
-    console.log('Accessing PDF in ChandanaGutta path');
-  }
+  // Fix PDF resume path
+  document.addEventListener('click', function(event) {
+    // Look for resume PDF links
+    if (event.target && event.target.closest('a[href*="ChandanaGutta_Resume.pdf"]')) {
+      const link = event.target.closest('a[href*="ChandanaGutta_Resume.pdf"]');
+      const href = link.getAttribute('href');
+      
+      // If it's the root path version 
+      if (href === '/ChandanaGutta_Resume.pdf') {
+        event.preventDefault();
+        console.log('Fixing resume PDF link to use absolute path');
+        window.open('https://cgutta06.github.io/ChandanaGutta_Resume.pdf', '_blank');
+      }
+    }
+  });
   
   // Fix double path issue (e.g., /ChandanaGutta/ChandanaGutta/portfolio)
-  if (path.includes('/ChandanaGutta/ChandanaGutta/')) {
+  if (window.location.pathname.includes('/ChandanaGutta/ChandanaGutta/')) {
     console.log('Fixing double path issue');
-    window.location.href = path.replace('/ChandanaGutta/ChandanaGutta/', '/ChandanaGutta/');
+    window.location.href = window.location.pathname.replace('/ChandanaGutta/ChandanaGutta/', '/ChandanaGutta/');
   }
 })();

@@ -12,6 +12,15 @@ window.addEventListener('unhandledrejection', function(event) {
   event.preventDefault();
 });
 
+// Special handling for Resume PDF when accessing from GitHub Pages
+if (typeof window !== 'undefined' && window.location.hostname.includes('github.io')) {
+  // Check if trying to access resume PDF with 404 error
+  if (window.location.pathname === '/ChandanaGutta_Resume.pdf' && document.title.includes('404')) {
+    console.log('Redirecting to the correct resume PDF path');
+    window.location.href = '/ChandanaGutta/ChandanaGutta_Resume.pdf';
+  }
+}
+
 // Fix for common Next.js router issues on GitHub Pages
 if (typeof window !== 'undefined') {
   // Check if we're on GitHub Pages
@@ -21,6 +30,12 @@ if (typeof window !== 'undefined') {
       // Check if clicked on a link
       if (event.target.tagName === 'A' && event.target.href) {
         const href = event.target.getAttribute('href');
+        
+        // Skip PDF files
+        if (href && href.endsWith('.pdf')) {
+          console.log('PDF link clicked, allowing default behavior for:', href);
+          return;
+        }
         
         // If it's an internal link without the base path
         if (href && href.startsWith('/') && !href.startsWith('/ChandanaGutta')) {
