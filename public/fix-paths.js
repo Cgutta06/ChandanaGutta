@@ -21,18 +21,37 @@
     return originalFetch.apply(this, arguments);
   };
   
-  // Fix PDF resume path
+  // Fix PDF resume path - handle any reference to the resume PDF
   document.addEventListener('click', function(event) {
     // Look for resume PDF links
     if (event.target && event.target.closest('a[href*="ChandanaGutta_Resume.pdf"]')) {
       const link = event.target.closest('a[href*="ChandanaGutta_Resume.pdf"]');
       const href = link.getAttribute('href');
       
-      // If it's the root path version 
-      if (href === '/ChandanaGutta_Resume.pdf') {
+      // If it's not already an absolute URL
+      if (!href.startsWith('http')) {
         event.preventDefault();
         console.log('Fixing resume PDF link to use absolute path');
         window.open('https://cgutta06.github.io/ChandanaGutta_Resume.pdf', '_blank');
+      }
+    }
+  });
+  
+  // Fix navigation without base tag - all internal links need /ChandanaGutta prefix
+  document.addEventListener('click', function(event) {
+    // Don't handle PDF links - those are handled above
+    if (event.target && event.target.closest('a[href*=".pdf"]')) return;
+    
+    // Handle internal navigation links
+    if (event.target && event.target.closest('a')) {
+      const link = event.target.closest('a');
+      const href = link.getAttribute('href');
+      
+      // If it's an internal link that doesn't start with /ChandanaGutta
+      if (href && href.startsWith('/') && !href.startsWith('/ChandanaGutta') && !href.includes('://')) {
+        event.preventDefault();
+        console.log('Fixing internal link to include base path');
+        window.location.href = '/ChandanaGutta' + href;
       }
     }
   });

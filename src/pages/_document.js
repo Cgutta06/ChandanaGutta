@@ -24,9 +24,10 @@ class MyDocument extends Document {
           {/* Only include base tag and scripts in production */}
           {process.env.NODE_ENV === 'production' && (
             <>
-              <base href="/ChandanaGutta/" />
+              {/* Removed base tag to allow direct PDF links to work properly */}
               <script src="/ChandanaGutta/error-handler.js" type="text/javascript"></script>
               <script src="/ChandanaGutta/fix-paths.js" type="text/javascript"></script>
+              <script src="/ChandanaGutta/resumeRedirect.js" type="text/javascript"></script>
             </>
           )}
         </Head>

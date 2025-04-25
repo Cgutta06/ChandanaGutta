@@ -34,12 +34,20 @@ jobs:
       - name: Build
         run: |
           npm run build
+          # Create .nojekyll file to disable Jekyll processing
           touch out/.nojekyll
-          # Make sure the resume PDF is at the root level
+          # Make sure the resume PDF is at all possible paths
           cp public/ChandanaGutta_Resume.pdf out/
-          # Also copy PDF to the ChandanaGutta subpath
+          cp public/ChandanaGutta_Resume.pdf out/resume.pdf
           mkdir -p out/ChandanaGutta
           cp public/ChandanaGutta_Resume.pdf out/ChandanaGutta/
+          cp public/ChandanaGutta_Resume.pdf out/ChandanaGutta/ChandanaGutta_Resume.pdf
+          cp public/ChandanaGutta_Resume.pdf out/ChandanaGutta/resume.pdf
+          # Copy HTML redirects
+          cp public/resume.html out/
+          cp public/resume.html out/ChandanaGutta/
+          cp public/ChandanaGutta_Resume.html out/
+          cp public/ChandanaGutta_Resume.html out/ChandanaGutta/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
