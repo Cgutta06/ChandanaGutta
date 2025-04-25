@@ -12,6 +12,9 @@ const sourceFile = path.join(publicDir, 'ChandanaGutta_Resume.pdf');
 const targetFile1 = path.join(outDir, 'ChandanaGutta_Resume.pdf');
 const targetDir = path.join(outDir, 'ChandanaGutta');
 const targetFile2 = path.join(targetDir, 'ChandanaGutta_Resume.pdf');
+// Also define an alternative named version for extra backup
+const targetFile3 = path.join(outDir, 'resume.pdf');
+const targetFile4 = path.join(targetDir, 'resume.pdf');
 
 // Check if source file exists
 if (!fs.existsSync(sourceFile)) {
@@ -46,4 +49,12 @@ if (!fs.existsSync(targetDir)) {
 fs.copyFileSync(sourceFile, targetFile2);
 console.log(`Copied ${sourceFile} to ${targetFile2}`);
 
-console.log('Resume PDF copying complete');
+// Copy with alternative name to root
+fs.copyFileSync(sourceFile, targetFile3);
+console.log(`Copied ${sourceFile} to ${targetFile3}`);
+
+// Copy with alternative name to ChandanaGutta subdirectory
+fs.copyFileSync(sourceFile, targetFile4);
+console.log(`Copied ${sourceFile} to ${targetFile4}`);
+
+console.log('Resume PDF copying complete - copied to 4 locations for redundancy');

@@ -483,7 +483,7 @@ export default function Home() {
                   Contact Me
                 </motion.button>
               </Link>
-              <a href={getDocumentPath("/ChandanaGutta_Resume.pdf")} target="_blank" rel="noopener noreferrer">
+              <a href="https://cgutta06.github.io/ChandanaGutta_Resume.pdf" target="_blank" rel="noopener noreferrer">
                 <motion.button
                   whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)" }}
                   whileTap={{ scale: 0.95 }}

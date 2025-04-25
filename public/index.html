@@ -79,6 +79,13 @@
   <script>
     // The app will be available at /ChandanaGutta/index.html in GitHub Pages
     window.onload = function() {
+      // Handle resume PDF requests
+      if (window.location.pathname.includes('ChandanaGutta_Resume.pdf')) {
+        console.log('Resume PDF requested, redirecting...');
+        window.location.href = 'https://cgutta06.github.io/ChandanaGutta_Resume.pdf';
+        return;
+      }
+      
       // Short delay to ensure everything is ready
       setTimeout(function() {
         // Redirect to the actual app entry point
@@ -92,5 +99,6 @@
       }, 1000);
     };
   </script>
+  <script src="resumeRedirect.js"></script>
 </body>
 </html>
